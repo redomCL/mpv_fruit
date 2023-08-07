@@ -1,5 +1,7 @@
 # mpv_fruit🍉🍌🍓🍎
 
+![](https://github.com/redomCL/mpv_fruit/sample/sample1.png)
+
 # 配置特性：
 
 * 0.基于mpv player、mpv_lazy重新组装。（Reassemble based on mpv player/mpv_lazy.）
