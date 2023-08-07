@@ -18,8 +18,10 @@
 
 # Credits
 
-* mpv_lazy : https://github.com/hooke007/MPV_lazy
-
 * mpv player : https://mpv.io/
 
 * mpv player User Scripts : https://github.com/mpv-player/mpv/wiki/User-Scripts
+
+* mpv player Windows buidl : https://github.com/shinchiro/mpv-winbuild-cmake/releases
+
+* mpv_lazy : https://github.com/hooke007/MPV_lazy
