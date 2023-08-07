@@ -1,10 +1,10 @@
-# mpv_fruit
+# mpv_fruit🍉🍌🍓🍎
 
 # 配置特性：
 
 0.基于mpv player、mpv_lazy重新组装。（Reassemble based on mpv player/mpv_lazy.）
 
-1."osc_plus.lua"改名为"osc_fruit.lua"重新排版并修改样式。
+1."osc_plus.lua"改名为"osc_fruit.lua"🍉🍌🍓🍎，重新排版并修改样式。
 
 2.修改已集成的lua内的字符串为中文，并统一样式。
 
