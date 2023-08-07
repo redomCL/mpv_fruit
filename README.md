@@ -15,3 +15,11 @@
 5.预设了四款配置供不同性能平台使用。
 
 6.重新定义了快捷键并绘制快捷键说明书。
+
+# Credits
+
+* mpv_lazy : https://github.com/hooke007/MPV_lazy
+
+* mpv player : https://mpv.io/
+
+* mpv player User Scripts : https://github.com/mpv-player/mpv/wiki/User-Scripts
