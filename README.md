@@ -34,4 +34,6 @@
 
 * mpv player Windows build : https://github.com/shinchiro/mpv-winbuild-cmake/releases
 
+* https://github.com/dyphire/mpv-config
+
 * mpv_lazy : https://github.com/hooke007/MPV_lazy
