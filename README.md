@@ -1,6 +1,6 @@
 # mpv_fruit🍉🍌🍓🍎
 
-![](https://github.com/redomCL/mpv_fruit/sample/sample1.png)
+![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA1.png)
 
 # 配置特性：
 
