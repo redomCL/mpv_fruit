@@ -2,19 +2,19 @@
 
 # 配置特性：
 
-0.基于mpv player/mpv_lazy重新组装（Reassemble based on mpv player/mpv_lazy.）。
+0.基于mpv player、mpv_lazy重新组装。（Reassemble based on mpv player/mpv_lazy.）
 
-1.将mpv_lazy项目下部分配置、其他.lua脚本重新组装到mpv player。
+1."osc_plus.lua"改名为"osc_fruit.lua"重新排版并修改样式。
 
-2.osc_plus.lua改名为osc_fruit重新排版并修改样式，其他.lua脚本内的字符串改为中文并修改部分样式。
+2.修改已集成的lua内的字符串为中文，并统一样式。
 
-3.组装了anime4K着色器。
+3.集成了补帧用的引擎，并提供了四款补帧脚本。
 
-4.组装了四款补帧脚本。
+4.集成了高配的anime4K着色器。
 
-5.预设了四款配置供不同性能平台使用。
+5.配置了四款预设，供不同性能硬件使用。
 
-6.重新定义了快捷键并绘制快捷键说明书。
+6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
 # Credits
 
