@@ -16,16 +16,15 @@
 
 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-# 使用方法：🍉🍌🍓🍎
+# 使用方法🍉🍌🍓🍎：
 
-* 可以使用本[release](https://github.com/redomCL/mpv_fruit/releases)下集成好的mpv播放器压缩包，也可以自行下载[shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases)，然后用本项目覆盖配置。
+* 可以使用本 [release](https://github.com/redomCL/mpv_fruit/releases) 下集成好的mpv播放器压缩包，也可以自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 然后用本项目下的配置文件覆盖。
 
 * mpv目录：为定制好的预设+快捷键，不包含第三方滤镜、着色器等，适合单纯使用mpv播放器的用户。
   
 * 画质修补+补帧套件目录：包含集成好的所有第三方滤镜、着色器、对应按键开关等，需要时将该目录下的文件直接覆盖到mpv播放器根目录，覆盖后为本项目完整配置。
 
 * 预设配置：内置四种预设，用户可根据不同习惯和硬件性能选择。
-
 
 # Credits
 
