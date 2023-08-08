@@ -24,7 +24,7 @@
 
 # 使用方法🍉🍌🍓🍎：
 
-* 可以使用本 [release](https://github.com/redomCL/mpv_fruit/releases) 下集成好的mpv播放器压缩包，也可以自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 然后用本项目下的配置文件覆盖。
+* 可以直接使用本 [release](https://github.com/redomCL/mpv_fruit/releases) 下集成好的mpv播放器压缩包，也可以自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 然后用本项目下的配置文件覆盖。
 
 * mpv目录：为定制好的说明书、字体、默认预设（最高质量解码）、快捷键、脚本，不包含第三方滤镜、着色器等，适合单纯使用mpv播放器的用户。
   
