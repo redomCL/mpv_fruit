@@ -1,4 +1,4 @@
---[[
+--[[-
 SOURCE_ https://github.com/mpv-player/mpv/blob/master/player/lua/osc.lua
 COMMIT_ 4198e6f35f1a923da0aea2fb6f62c840e83a2c15
 文档_ https://github.com/hooke007/MPV_lazy/discussions/18
