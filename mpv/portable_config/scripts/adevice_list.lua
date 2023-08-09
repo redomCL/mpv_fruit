@@ -25,7 +25,7 @@ local o = {
     --read http://docs.aegisub.org/3.2/ASS_Tags/ for reference of tags
     global_style = [[]],
     header_style = [[{\q2\fs30\c&H00ccff&}]],
-    list_style = [[{\q2\fs20\c&Hffffff&}]],
+    list_style = [[{\q2\fs25\c&Hffffff&}]],
     wrapper_style = [[{\c&H00ccff&\fs16}]],
     cursor_style = [[{\c&H0000ff&}]],
     selected_style = [[{\c&H0000ff&}]],
