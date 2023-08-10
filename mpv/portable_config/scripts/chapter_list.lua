@@ -14,7 +14,7 @@ local opts = require("mp.options")
 local o = {
     -- header of the list
     -- %cursor% and %total% to be used to display the cursor position and the total number of lists
-    header = "Chapter List [%cursor%/%total%]\\N ------------------------------------",
+    header = "章节列表 [%cursor%/%total%]\\N",
     --list ass style overrides inside curly brackets
     --these styles will be used for the whole list. so you need to reset them for every line
     --read http://docs.aegisub.org/3.2/ASS_Tags/ for reference of tags
