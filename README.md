@@ -8,7 +8,7 @@
 
 # 配置特性：
 
-* 0.基于mpv player、mpv_lazy重新组装。（Reassemble based on mpv player/mpv_lazy.）
+* 0.基于mpv player、mpv_lazy重新组装。（Repack based on mpv player/mpv_lazy.）
 
 * 1."osc_plus.lua"改名为"osc_fruit.lua"🍉🍌🍓🍎，重新排版并修改样式。
 
