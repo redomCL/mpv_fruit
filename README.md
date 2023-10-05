@@ -22,6 +22,8 @@
 
 * 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
+* 注：随着mpv的更新，解码和渲染算法会出现变化，这可能导致当前预设出现预计之外的情况出现，请自行查询mpv最新说明书进行更改，本项目已列举mpv官方说明书地址。
+
 # 使用方法🍉🍌🍓🍎：
 
 * 可以直接使用本 [release](https://github.com/redomCL/mpv_fruit/releases) 下集成好的mpv播放器压缩包，也可以自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 然后用本项目下的配置文件覆盖。
