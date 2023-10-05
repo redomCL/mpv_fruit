@@ -39,7 +39,7 @@
 |级别          |预设          |解码方式          |渲染方式                |色深抖动方式              |预览图质量        |
 |------------- |--------------|-----------------|------------------------|-------------------------|-----------------|
 |1|低 - 移动端|auto-safe|新渲染器<br>缩放算法：内置的profile＝fast|默认(fruit)|0(自动)|
-|2|中 - 平&emsp;衡|d3d11va-copy|新渲染器<br>缩放算法：内置的 profile=gpu-hq|默认(fruit)|0(自动)|
+|2|中 - 平&emsp;衡|d3d11va-copy|新渲染器<br>缩放算法：内置的profile=gpu-hq|默认(fruit)|0(自动)|
 |3|高 - 全精度|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes|误差抖动(内核为floyd-steinberg)|2(高，支持HDR)|
 
 # 使用了以下项目🔍：
