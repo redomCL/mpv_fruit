@@ -55,3 +55,5 @@
 * mpv_lazy : https://github.com/hooke007/MPV_lazy
 
 * Anime4K : https://github.com/bloc97/Anime4K
+
+* SSIM : https://gist.github.com/igv
