@@ -40,7 +40,7 @@
 |------------- |--------------|-----------------|------------------------|-------------------------|-----------------|
 |1[低]|移动端|auto-safe|新渲染器<br>缩放算法：内置的profile＝fast|默认(fruit)|0(自动)|
 |2[中]|平&emsp;衡|d3d11va|新渲染器<br>缩放算法：内置的profile=gpu-hq<br>外置SSIM着色器|默认(fruit)|0(自动)|
-|3[高]|全精度|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)&开启缩放优化<br>外置NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|2(高，支持HDR)|
+|3[高]|全精度|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)，开启缩放优化<br>外置NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|2(高，支持HDR)|
 
 # 使用了以下项目🔍：
 
