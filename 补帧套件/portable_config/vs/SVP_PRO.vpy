@@ -12,8 +12,8 @@ clip = video_in
 ############
 
 H_Pre = 1080
-Fps_Num = 60000
-Fps_Den = 1001
+Fps_Num = 1420000
+Fps_Den = 10001
 Abs = True
 Cpu = 1
 Nvof = False
