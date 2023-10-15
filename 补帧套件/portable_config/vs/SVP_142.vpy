@@ -1,5 +1,5 @@
 #### https://github.com/hooke007/MPV_lazy/wiki/3_K7sfunc
-#### 基于mpv_lazy SVP_PRO，补帧到142帧(144刷新显示器)
+#### 基于mpv_lazy的SVP_PRO，补帧到142帧(144刷新显示器)
 
 import vapoursynth as vs
 from vapoursynth import core
