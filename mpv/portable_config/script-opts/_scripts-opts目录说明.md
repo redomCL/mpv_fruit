@@ -1,7 +1,7 @@
-# adevice-list.lua：
+# adevice-list.lua
 * 音频设备菜单脚本配置文件
 
-# autoload.lua：
+# autoload.lua
 * 同类文件加载脚本配置文件
 
 #chapter-list.lua
