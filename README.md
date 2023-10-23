@@ -8,7 +8,7 @@
 
 # 配置特性🍺：
 
-* 0.基于mpv player、mpv_lazy重新组装(Repack based on mpv player/mpv_lazy)。
+* 0.基于mpv player、mpv_lazy重新组装(Repack based on mpv player/mpv_lazy)，本项目更专注于本地高质量播放，不对在线播放进行特别配置。
 
 * 1.通过mpv_lazy作者的osc_plus（本项目改为osc_fruit），UI实现的必要控制功能：包括暂停、文件跳转、章节跳转、音频、字幕轨道切换、预览图显示；UI实现的常见显示功能：包括当前播放的文件名、章节、列表、窗口缩放、解码类型、音量、字幕延迟。为减轻UI遮挡字幕，将UI改为透明。
 
