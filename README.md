@@ -22,7 +22,7 @@
 
 * 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-# 使用方法🍉🍌🍓🍎：
+# 使用方法🍉🍌🍓🍎(本项目不能覆盖更新)：
 
 * 推荐自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 然后用本项目下的配置文件覆盖，也可以直接使用本 [release](https://github.com/redomCL/mpv_fruit/releases) 下集成好的mpv播放器压缩包，但不推荐，没有本项目配置文件更新及时，容易过时。
 
