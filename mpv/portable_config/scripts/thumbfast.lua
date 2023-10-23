@@ -32,7 +32,7 @@ local options = {
     binpath = "mpv",             -- 自定义mpv路径
     min_duration = 0,            -- 对短视频关闭预览（秒）
     precise = 0,                 -- 预览精度
-    quality = 0,                 -- 预览质量
+    quality = 0,                 -- 预览质量 require vf_libplacebo for 3
     frequency = 0.1,             -- 解码频率（秒）
     auto_run = true,             -- 自动运行
 
@@ -311,7 +311,7 @@ if quality == 0 then
     end
     if options.sw_threads >= 3 then
         quality = 2
-        if options.sw_threads >= 5 then
+        if options.sw_threads >= 6 then
             quality = 3
         end
     elseif options.sw_threads == 1 then
@@ -334,7 +334,7 @@ local function quality_fin()
             vf_str = vf_str_pre..":flags=bicublin,format=fmt=gbrapf32,zscale=t=linear:npl=203,tonemap=tonemap=hable:desat=0.0,zscale=p=709:t=709:m=709,"..vf_str_suffix
         end
     elseif quality == 3 then
-        vf_str = "libplacebo=w="..effective_w..":h="..effective_h..":colorspace=bt709:color_primaries=bt709:color_trc=bt709:tonemapping=hable:format=bgra"
+        vf_str = "lavfi=[libplacebo=w="..effective_w..":h="..effective_h..":colorspace=bt709:color_primaries=bt709:color_trc=bt709:tonemapping=hable:format=bgra]"
     end
     return vf_str
 end
@@ -473,6 +473,10 @@ end
 local function real_res(req_w, req_h, filesize)
     local count = filesize / 4
     local diff = (req_w * req_h) - count
+
+    if (properties["video-params"] and properties["video-params"]["rotate"] or 0) % 180 == 90 then
+        req_w, req_h = req_h, req_w
+    end
 
     if diff == 0 then
         return req_w, req_h
