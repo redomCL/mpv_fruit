@@ -2,7 +2,7 @@
 ### 文档： https://github.com/hooke007/MPV_lazy/wiki/3_K7sfunc
 ##################################################
 
-__version__ = "0.1.22"
+__version__ = "0.1.23"
 
 __all__ = [
 	"FMT_CHANGE", "FMT_CTRL", "FPS_CHANGE", "FPS_CTRL",
@@ -1053,6 +1053,7 @@ def MVT_MQ(
 
 def RIFE_STD(
 	input : vs.VideoNode,
+	model : typing.Literal[9, 21, 24] = 9,
 	sc_mode : typing.Literal[0, 1, 2] = 1,
 	skip : bool = True,
 	stat_th : float = 60.0,
@@ -1066,6 +1067,8 @@ def RIFE_STD(
 	func_name = "RIFE_STD"
 	if not isinstance(input, vs.VideoNode) :
 		raise vs.Error(f"模块 {func_name} 的子参数 input 的值无效")
+	if model not in [9, 21, 24] :
+		raise vs.Error(f"模块 {func_name} 的子参数 model 的值无效")
 	if sc_mode not in [0, 1, 2] :
 		raise vs.Error(f"模块 {func_name} 的子参数 sc_mode 的值无效")
 	if not isinstance(skip, bool) :
@@ -1097,7 +1100,7 @@ def RIFE_STD(
 		cut0 = core.mv.SCDetection(clip=input, vectors=vec, thscd1=240, thscd2=130)
 
 	cut1 = core.resize.Bilinear(clip=cut0, format=vs.RGBS, matrix_in_s="709")
-	cut2 = core.rife.RIFE(clip=cut1, model=9, factor_num=fps_num, factor_den=fps_den, gpu_id=gpu, gpu_thread=gpu_t, sc=True if sc_mode else False, skip=skip, skip_threshold=stat_th)
+	cut2 = core.rife.RIFE(clip=cut1, model=model, factor_num=fps_num, factor_den=fps_den, gpu_id=gpu, gpu_thread=gpu_t, sc=True if sc_mode else False, skip=skip, skip_threshold=stat_th)
 	output = core.resize.Bilinear(clip=cut2, format=fmt_in, matrix_s="709", range=1 if colorlv==0 else None)
 
 	return output
@@ -1109,6 +1112,7 @@ def RIFE_STD(
 def RIFE_NV(
 	input : vs.VideoNode,
 	lt_d2k : bool = False,
+	model : typing.Literal[40, 46, 48] = 40,
 	sc_mode : typing.Literal[0, 1, 2] = 1,
 	fps_num : typing.Literal[2, 3, 4] = 2,
 	t_tta : bool = False,
@@ -1125,6 +1129,8 @@ def RIFE_NV(
 		raise vs.Error(f"模块 {func_name} 的子参数 input 的值无效")
 	if not isinstance(lt_d2k, bool) :
 		raise vs.Error(f"模块 {func_name} 的子参数 lt_d2k 的值无效")
+	if model not in [40, 46, 48] :
+		raise vs.Error(f"模块 {func_name} 的子参数 model 的值无效")
 	if sc_mode not in [0, 1, 2] :
 		raise vs.Error(f"模块 {func_name} 的子参数 sc_mode 的值无效")
 	if fps_num not in [2, 3, 4] :
@@ -1167,6 +1173,11 @@ def RIFE_NV(
 		if not ext_proc :
 			scale_model = 1
 
+	if model >=47 : # https://github.com/AmusementClub/vs-mlrt/blob/6c71b9546b1151542795f458968af562436d1065/scripts/vsmlrt.py#L875
+		t_tta = False
+		scale_model = 1.0
+		ext_proc = True
+
 	tile_size = 32 / scale_model
 	w_tmp = math.ceil(w_in / tile_size) * tile_size - w_in
 	h_tmp = math.ceil(h_in / tile_size) * tile_size - h_in
@@ -1181,9 +1192,9 @@ def RIFE_NV(
 		cut0 = core.mv.SCDetection(clip=input, vectors=vec, thscd1=240, thscd2=130)
 
 	cut1 = core.resize.Bilinear(clip=cut0, format=vs.RGBH if ext_proc else vs.RGBS, matrix_in_s="709")
-	if ext_proc :
+	if ext_proc : # https://github.com/AmusementClub/vs-mlrt/blob/6c71b9546b1151542795f458968af562436d1065/scripts/vsmlrt.py#L883
 		cut1 = core.std.AddBorders(clip=cut1, right=w_tmp, bottom=h_tmp)
-		fin = vsmlrt.RIFE(clip=cut1, multi=fps_num, scale=scale_model, model=46, ensemble=t_tta, _implementation=1, backend=vsmlrt.BackendV2.TRT(
+		fin = vsmlrt.RIFE(clip=cut1, multi=fps_num, scale=scale_model, model=model, ensemble=t_tta, _implementation=1, backend=vsmlrt.BackendV2.TRT(
 			num_streams=gpu_t, force_fp16=True, output_format=1,
 			workspace=None if ws_size < 128 else (ws_size if st_eng else ws_size * 2),
 			use_cuda_graph=True, use_cublas=False, use_cudnn=False,
@@ -1192,7 +1203,7 @@ def RIFE_NV(
 			device_id=gpu, short_path=True))
 		fin = core.std.Crop(clip=fin, right=w_tmp, bottom=h_tmp)
 	else :
-		fin = vsmlrt.RIFE(clip=cut1, multi=fps_num, scale=scale_model, model=46, ensemble=t_tta, _implementation=2, backend=vsmlrt.BackendV2.TRT(
+		fin = vsmlrt.RIFE(clip=cut1, multi=fps_num, scale=scale_model, model=model, ensemble=t_tta, _implementation=2, backend=vsmlrt.BackendV2.TRT(
 			num_streams=gpu_t, fp16=False, force_fp16=False, tf32=True, output_format=0,
 			workspace=None if ws_size < 128 else ws_size,
 			use_cuda_graph=True, use_cublas=False, use_cudnn=False,
