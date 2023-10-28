@@ -19,7 +19,7 @@ Gpu_T = 2
 Lk_Fmt = False
 
 ## H_Pre	整数，预降低处理源高度（填你的显示器高度）
-## Model	9|当前使用的模型为rife-v4，编号为9
+## Model	<9> 当前使用的模型为rife-v4，编号为9
 ## Fps_Num	整数，Fps_Num/Fps_Den 的值即帧率倍数
 ## Fps_Den	整数
 ## Sc_Mode	<0|1|2> 场景切换检测的模式，0为禁用
