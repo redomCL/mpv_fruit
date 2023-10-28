@@ -20,7 +20,7 @@ Lk_Fmt = False
 ## Fps_Num	整数，Fps_Num/Fps_Den 的计算结果即最终帧率或倍率
 ## Fps_Den	整数
 ## Abs		<True|False> 输出帧率(True)还是倍率(False)
-## Cpu		<0|1> 是否只使用CPU
+## Cpu		<0|1> 是否只使用CPU，0为启用显卡加速
 ## Nvof		<True|False> 是否启用Optical Flow（nvidia专用）
 ## Gpu		<0|11|12|21> 使用的显卡序号，0为排序一号
 ## Lk_Fmt	<True|False> 是否锁定像素格式为yuv420p8
