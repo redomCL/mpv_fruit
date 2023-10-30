@@ -2473,7 +2473,7 @@ function osc_init()
             local property = user_opts.remaining_playtime and "playtime-remaining"
                                                            or "time-remaining"
             if state.tc_ms then
-                return (minus..mp.get_property_osd("playtime-remaining/full"))
+                return (minus..mp.get_property_osd(property .. "/full"))
             else
                 return (minus..mp.get_property_osd(property))
             end
