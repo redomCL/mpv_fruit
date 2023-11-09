@@ -4,7 +4,7 @@
 # load_plus.lua
 * 同类文件加载脚本配置文件
 
-#chapter-list.lua
+# chapter-list.lua
 * 章节菜单脚本配置文件
 
 # osc.conf
