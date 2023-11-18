@@ -56,6 +56,6 @@
 
 * Anime4K : https://github.com/bloc97/Anime4K
 
-* SSIM : https://gist.github.com/igv
+* KrigBilateral&SSIM : https://gist.github.com/igv
 
 * NNEDI3 : https://github.com/bjin/mpv-prescalers
