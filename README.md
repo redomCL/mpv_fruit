@@ -22,9 +22,9 @@
 
 * 6.配置了3款预设，供不同性能硬件使用。
 
-# 使用方法🥢(本项目不能覆盖更新)：
+# 使用相关🥢(本项目不能覆盖更新)：
 
-* 推荐自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 然后用本项目下的配置文件覆盖，也可以直接使用本 [release](https://github.com/redomCL/mpv_fruit/releases) 下集成好的mpv播放器压缩包，但不推荐，没有本项目配置文件更新及时，容易过时。
+* 推荐只用本项目下的配置文件，mpv自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) ，不推荐本项目下的release，没有本项目配置文件更新及时，容易过时。
 
 * mpv目录：定制好的说明书、字体、高质量解码配置、快捷键、脚本、KrigBilateral、NNEDI3、SSIM着色器（此项默认为始终在合适状态自动开启）、高配的Anime4K着色器（该着色器只适用于动画类视频，且对画面影响激烈！不同人群主观画质标准不同，因此默认不开启，用户可使用已经设置好的快捷键手动激活）。
 
@@ -34,9 +34,9 @@
   
 * 补帧套件目录：集成好的补帧套件、对应按键开关，需要时将该目录下的文件直接覆盖到mpv播放器根目录。
 
-* 预设配置目录：本项目下的mpv目录是默认配置，如果你的硬件性能不能满足本项目的默认配置。可以在本目录选择适合自己的预设配置文件夹改名为portable_config覆盖到mpv根目录。本目录内置3种预设，用户可根据不同习惯和硬件性能选择。
+* 预设配置目录：内置3种预设，用户可根据不同习惯和硬件性能选择。
 
-* 随着官方mpv的更新，mpv内置的profile默认值可能会发生变化（如默认缩放算法的更换），本项目更新有一定滞后性，因此可能导致项目内3种预设出现预计之外的情况，若出现异常请自行查询官方mpv最新说明书进行修正或等待项目更新：https://mpv.io/manual/master/
+* 随着官方mpv更新非常频繁，因此本项目有滞后性，若出现异常请自行查询官方mpv最新说明书进行修正或等待项目更新：https://mpv.io/manual/master/
 
 # 预设对比🆚:
 
