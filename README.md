@@ -8,7 +8,7 @@
 
 # 配置特性🍺：
 
-* 0.基于mpv player，mpv_lazy，dyphire/mpv-config重新组装，仅专注本地高质量播放。
+* 0.基于mpv player、mpv_lazy、dyphire/mpv-config重新组装，仅专注本地高质量播放。
 
 * 1.使用mpv_lazy作者的osc_plus（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
 
@@ -28,7 +28,7 @@
 
 * 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询官方mpv最新说明书进行修正或等待项目更新：https://mpv.io/manual/master/
 
-* /mpv：定制好的说明书、解码配置、快捷键、脚本、KrigBilateral、NNEDI3、SSIM（默认启用）、Anime4K（原作者高预设，默认不启用，按相应快捷键启用）。
+* /mpv：定制好的说明书、解码配置、快捷键、脚本、KrigBilateral（默认启用）、NNEDI3（默认启用）、SSIM（默认启用）、Anime4K（原作者高预设，默认不启用，按相应快捷键启用）。
 
 * /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
 
