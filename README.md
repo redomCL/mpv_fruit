@@ -24,7 +24,7 @@
 
 # 目录简介🥢(本项目不能覆盖更新)：
 
-## 更多的目录及文件的说明请查看各文件夹的.md说明，并自行查阅mpv官方说明书
+## 更多的目录及文件的说明请查看各文件夹的.md，并自行查阅mpv官方说明书
 
 * 推荐只用本项目配置文件，mpv播放器自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 。
 
