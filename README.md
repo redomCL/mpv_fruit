@@ -16,7 +16,7 @@
 
 * 3.集成KrigBilateral、NNEDI3、SSIM（默认启用），集成了高配的Anime4K着色器（默认不启用，可快捷键手动激活）。
 
-* 4.集成了3款补帧工具(mpv_lazy的SVP PRO、RIFE STD)。
+* 4.集成了3款补帧方案(mpv_lazy的SVP PRO、RIFE STD)。
 
 * 5.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
