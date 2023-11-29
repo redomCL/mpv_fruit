@@ -28,7 +28,7 @@
 
 * 推荐只用本项目配置文件，mpv播放器自行下载 https://github.com/shinchiro/mpv-winbuild-cmake/releases 。
 
-* 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询官方mpv最新说明书进行修正 https://mpv.io/manual/master/ ，或等待本项目更新。
+* 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询mpv官方最新说明书进行修正 https://mpv.io/manual/master/ ，或等待本项目更新。
 
 * /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。其中Anime4K为原作者的高预设，默认不启用，按相应快捷键启用。
 
