@@ -28,7 +28,7 @@
 
 * 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询官方mpv最新说明书进行修正或等待项目更新：https://mpv.io/manual/master/
 
-* /mpv：定制好的说明书、解码配置、快捷键、脚本、KrigBilateral（默认启用）、NNEDI3（默认启用）、SSIM（默认启用）、Anime4K（原作者高预设，默认不启用，按相应快捷键启用）。
+* /mpv：定制好的说明书、解码配置、快捷键、脚本、KrigBilateral、NNEDI3、SSIM、Anime4K。（Anime4K为原作者高预设，默认不启用，按相应快捷键启用）。
 
 * /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
 
