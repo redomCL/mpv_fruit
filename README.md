@@ -24,19 +24,19 @@
 
 # 目录简介🥢(本项目不能覆盖更新)：
 
-* 推荐只用本项目下的配置文件，mpv自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) ，不推荐本项目下的release，没有本项目配置文件更新及时，容易过时。
+* 推荐只用本项目配置文件，mpv播放器自行下载 [shichiro mpv windows build](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 。
 
-* 官方mpv更新非常频繁，因此本项目有滞后性，若出现异常请自行查询官方mpv最新说明书进行修正或等待项目更新：https://mpv.io/manual/master/
+* 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询官方mpv最新说明书进行修正或等待项目更新：https://mpv.io/manual/master/
 
-* /mpv：定制好的说明书、字体、高质量解码配置、快捷键、脚本、KrigBilateral、NNEDI3、SSIM着色器（默认启用）、高配的Anime4K着色器（默认不启用，按相应快捷键激活）。
+* /mpv：定制好的说明书、解码配置、快捷键、脚本、KrigBilateral、NNEDI3、SSIM（默认启用）、Anime4K（原作者高预设，默认不启用，按相应快捷键启用）。
 
-* /svpflow：收集到的svp补帧引擎文件，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
+* /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
 
 * /展示：图片展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
-* /补帧套件：集成好的补帧套件、对应按键开关，需要时将该目录下的文件直接覆盖到mpv播放器根目录。
+* /补帧套件：集成好的补帧套件和对应的按键开关，需要时将该目录下的文件覆盖到mpv播放器根目录。
 
-* /解码预设：三种解码预设，需要时将该目录下的文件直接覆盖到mpv播放器根目录。
+* /解码预设：三种解码预设，需要时将该目录下的文件覆盖到mpv播放器根目录。
 
 # 预设对比🆚:
 
