@@ -16,7 +16,7 @@
 
 * 3.集成KrigBilateral、NNEDI3、SSIM、Anime4K。
 
-* 4.集成了3款补帧方案(mpv_lazy的SVP PRO、RIFE STD)。
+* 4.集成3款补帧方案(mpv_lazy的SVP PRO、RIFE STD)。
 
 * 5.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
