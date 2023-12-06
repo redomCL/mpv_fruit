@@ -1,1 +1,1 @@
-本分支用于Linux mpv
+本分支用于Linux Flathub mpv
