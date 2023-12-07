@@ -4,4 +4,4 @@
 
 * Deb版配置路径：~/.config/mpv (/home/user/.config/mpv)
 
-* 推荐Flathub版，更新更快
+* 推荐Flathub版，更新更快。
