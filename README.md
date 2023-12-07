@@ -3,3 +3,5 @@
 * Flathub版配置路径：~/.var/app/io.mpv.Mpv/config/mpv (/home/user/.var/app/io.mpv.Mpv/config/mpv)
 
 * Deb版配置路径：~/.config/mpv (/home/user/.config/mpv)
+
+* 推荐Flathub版，更新更快
