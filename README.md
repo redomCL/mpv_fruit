@@ -4,4 +4,4 @@
 
 * Deb版配置路径：~/.config/mpv (/home/user/.config/mpv)
 
-* 推荐Flathub版，更新更快。
+* 推荐Flathub版，更新更快，本配置默认用于Flathub版（缓存路径默认使用Flathub的路径，Deb请自行更改路径，功能不受影响）。
