@@ -60,6 +60,8 @@
 
 * mpv_lazy : https://github.com/hooke007/MPV_lazy
 
+* tsl0922 : https://github.com/tsl0922/mpv-menu-plugin
+
 * Anime4K : https://github.com/bloc97/Anime4K
 
 * KrigBilateral&SSIM : https://gist.github.com/igv
