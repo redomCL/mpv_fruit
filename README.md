@@ -1,4 +1,4 @@
-#### 🔈新脚本推荐：https://github.com/tsl0922/mpv-menu-plugin ，该款脚本为mpv菜单，比以往菜单响应时间短得多，弥补了mpv一直以来没有菜单的问题，推荐大家使用。
+#### 🔈新脚本推荐：https://github.com/tsl0922/mpv-menu-plugin ，又一款mpv菜单，响应时间很快，弥补了mpv一直以来没有菜单的问题，推荐使用。
 
 # mpv_fruit🍉🍌🍓🍎
 
