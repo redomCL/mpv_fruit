@@ -1,5 +1,7 @@
 #### 🔈新脚本推荐：https://github.com/tsl0922/mpv-menu-plugin ，又一款mpv菜单，响应时间很快，弥补了mpv一直以来没有菜单的问题，推荐使用。
 
+#### 🔈mpv播放器讨论QQ群：611768740
+
 # mpv_fruit🍉🍌🍓🍎
 
 ![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA1.png)
