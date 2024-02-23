@@ -54,7 +54,7 @@
 |1[低]|移动端|auto-safe|新渲染器<br>缩放算法：内置的profile＝fast|默认(fruit)|0(自动)|
 |2[中]|平&emsp;衡|d3d11va|新渲染器<br>缩放算法：内置的profile=gpu-hq<br>外置SSIM着色器|默认(fruit)|0(自动)|
 |3[高]|高精度[默认预设]|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)，开启缩放优化<br>外置KrigBilateral+NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|2(高，支持HDR)|
-|4[HTPC]|用于HTPC[配置同3，但解除了一些不该有的限制]：<br>×全屏独占与目前右键菜单冲突，因此暂时依然不启用<br>√HDR直通<br>√音频设备独占<br>√多声道音频输出<br>√杜比家族、DTS家族直通|配置同3|配置同3|配置同3|配置同3
+|4[HTPC]|用于HTPC[配置同3，但解除了一些限制]：<br>√音频设备独占<br>√多声道音频输出<br>√杜比家族、DTS家族直通|配置同3|配置同3|配置同3|配置同3
 
 # 使用了以下项目🔍：
 
