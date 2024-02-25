@@ -24,7 +24,7 @@ local settings = {
     key_selectfile = "RIGHT LEFT",
     key_unselectfile = "",
     key_playfile = "ENTER",
-    key_removefile = "",
+    key_removefile = "BS",
     key_closeplaylist = "ESC SHIFT+ENTER",
 
     -- extra functionality dynamic keys
@@ -84,7 +84,7 @@ local settings = {
     [
       "jpg", "jpeg", "png", "tif", "tiff", "gif", "webp", "svg", "bmp",
       "mp3", "wav", "ogm", "flac", "m4a", "wma", "ogg", "opus",
-      "mkv", "avi", "mp4", "ogv", "webm", "rmvb", "flv", "wmv", "mpeg", "mpg", "m4v", "3gp", "vob"
+      "mkv", "avi", "mp4", "ogv", "webm", "rmvb", "flv", "wmv", "mpeg", "mpg", "m4v", "3gp"
     ]
   ]],
 
@@ -419,6 +419,22 @@ local filename_replace_functions = {
     hex_to_char = function(x) return string.char(tonumber(x, 16)) end
 }
 
+-- from http://lua-users.org/wiki/LuaUnicode
+local UTF8_PATTERN = '[%z\1-\127\194-\244][\128-\191]*'
+
+-- return a substring based on utf8 characters
+-- like string.sub, but negative index is not supported
+local function utf8_sub(s, i, j)
+    local t = {}
+    local idx = 1
+    for match in s:gmatch(UTF8_PATTERN) do
+        if j and idx > j then break end
+        if idx >= i then t[#t + 1] = match end
+        idx = idx + 1
+    end
+    return table.concat(t)
+end
+
 --strip a filename based on its extension or protocol according to rules in settings
 function stripfilename(pathfile, media_title)
     if pathfile == nil then return '' end
@@ -439,7 +455,7 @@ function stripfilename(pathfile, media_title)
         end
     end
     if settings.slice_longfilenames and tmp:len() > settings.slice_longfilenames_amount + 5 then
-        tmp = tmp:sub(1, settings.slice_longfilenames_amount) .. " ..."
+        tmp = utf8_sub(tmp, 1, settings.slice_longfilenames_amount) .. " ..." 
     end
     return tmp
 end
@@ -682,7 +698,7 @@ function showplaylist(duration)
     draw_playlist()
     keybindstimer:kill()
 
-    local dur = duration or settings.playlist_display_timeout
+    local dur = tonumber(duration) or settings.playlist_display_timeout
     if dur > 0 then
         keybindstimer = mp.add_periodic_timer(dur, remove_keybinds)
     end
@@ -695,7 +711,7 @@ function showplaylist_non_interactive(duration)
     draw_playlist()
     keybindstimer:kill()
 
-    local dur = duration or settings.playlist_display_timeout
+    local dur = tonumber(duration) or settings.playlist_display_timeout
     if dur > 0 then
         keybindstimer = mp.add_periodic_timer(dur, remove_keybinds)
     end
@@ -1034,13 +1050,67 @@ function save_playlist(filename)
     end
 end
 
-function alphanumsort(a, b)
-    local function padnum(d)
-        local dec, n = string.match(d, "(%.?)0*(.+)")
-        return #dec > 0 and ("%.12f"):format(d) or ("%s%03d%s"):format(dec, #n, n)
+----- winapi start -----
+-- in windows system, we can use the sorting function provided by the win32 API
+-- see https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmplogicalw
+-- this function was taken from https://github.com/mpvnet-player/mpv.net/issues/575#issuecomment-1817413401
+local winapi = {}
+local is_windows = package.config:sub(1,1) == "\\"
+
+if is_windows then
+    -- is_ffi_loaded is false usually means the mpv builds without luajit
+    local is_ffi_loaded, ffi = pcall(require, "ffi")
+
+    if is_ffi_loaded then
+        winapi = {
+            ffi = ffi,
+            C = ffi.C,
+            CP_UTF8 = 65001,
+            shlwapi = ffi.load("shlwapi"),
+        }
+
+        -- ffi code from https://github.com/po5/thumbfast, Mozilla Public License Version 2.0
+        ffi.cdef[[
+            int __stdcall MultiByteToWideChar(unsigned int CodePage, unsigned long dwFlags, const char *lpMultiByteStr,
+            int cbMultiByte, wchar_t *lpWideCharStr, int cchWideChar);
+            int __stdcall StrCmpLogicalW(wchar_t *psz1, wchar_t *psz2);
+        ]]
+
+        winapi.utf8_to_wide = function(utf8_str)
+            if utf8_str then
+                local utf16_len = winapi.C.MultiByteToWideChar(winapi.CP_UTF8, 0, utf8_str, -1, nil, 0)
+
+                if utf16_len > 0 then
+                    local utf16_str = winapi.ffi.new("wchar_t[?]", utf16_len)
+
+                    if winapi.C.MultiByteToWideChar(winapi.CP_UTF8, 0, utf8_str, -1, utf16_str, utf16_len) > 0 then
+                        return utf16_str
+                    end
+                end
+            end
+
+            return ""
+        end
     end
-    return tostring(a):lower():gsub("%.?%d+", padnum) .. ("%3d"):format(#b)
-        < tostring(b):lower():gsub("%.?%d+", padnum) .. ("%3d"):format(#a)
+end
+----- winapi end -----
+
+function alphanumsort(a, b)
+    local is_ffi_loaded = pcall(require, "ffi")
+    if is_windows and is_ffi_loaded then
+        local a_wide = winapi.utf8_to_wide(a)
+        local b_wide = winapi.utf8_to_wide(b)
+        return winapi.shlwapi.StrCmpLogicalW(a_wide, b_wide) == -1
+    else
+        -- alphanum sorting for humans in Lua
+        -- http://notebook.kulchenko.com/algorithms/alphanumeric-natural-sorting-for-humans-in-lua
+        local function padnum(d)
+            local dec, n = string.match(d, "(%.?)0*(.+)")
+            return #dec > 0 and ("%.12f"):format(d) or ("%s%03d%s"):format(dec, #n, n)
+        end
+        return tostring(a):lower():gsub("%.?%d+", padnum) .. ("%3d"):format(#b)
+            < tostring(b):lower():gsub("%.?%d+", padnum) .. ("%3d"):format(#a)
+    end
 end
 
 -- fast sort algo from https://github.com/zsugabubus/dotfiles/blob/master/.config/mpv/scripts/playlist-filtersort.lua
