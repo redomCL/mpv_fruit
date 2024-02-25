@@ -12,7 +12,7 @@ local scroll_list = {
 
     num_entries = 16,
     wrap = false,
-    empty_text = "no entries"
+    empty_text = "无"
 }
 
 --formats strings for ass handling
@@ -120,13 +120,13 @@ function scroll_list:update_ass()
     if not overflow then finish = #self.list end
 
     --adding a header to show there are items above in the list
-    if start > 1 then self:append(self.wrapper_style..(start-1)..' 个文件👆\\N\\N') end
+    if start > 1 then self:append(self.wrapper_style..(start-1)..' 个文件⬆\\N\\N') end
 
     for i=start, finish do
         self:format_line(i, self.list[i])
     end
 
-    if overflow then self:append('\\N'..self.wrapper_style..#self.list-finish..' 个文件👇') end
+    if overflow then self:append('\\N'..self.wrapper_style..#self.list-finish..' 个文件⬇') end
     self.ass:update()
 end
 
