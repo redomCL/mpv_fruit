@@ -175,13 +175,13 @@ local function updateTrackList(title, type, prop)
                     id = nil,
                     index = nil,
                     disabled = false,
-                    ass = "○ None"
+                    ass = "○ 不加载"
                 }
             }
         
             if isTrackSelected(nil, type) then
                 list.selected = 1
-                list[1].ass = "● None"
+                list[1].ass = "● 不加载"
                 list[1].style = o.active_style
             end
     
