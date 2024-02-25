@@ -16,6 +16,8 @@
 ![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA4.png)
 ![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA5.png)
 ![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA6.png)
+![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA7.png)
+
 
 # 配置特性🍺：
 
@@ -31,9 +33,11 @@
 
 * 5.集成3款补帧方案(mpv_lazy的SVP PRO、RIFE STD)。
 
-* 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
+* 6.集成了simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ）。
 
-* 7.四种预设，适配不同性能的硬件和情境。
+* 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
+
+* 8.四种预设，适配不同性能的硬件和情境。
 
 # 目录简介🥢(本项目不能覆盖更新)：
 
@@ -46,6 +50,8 @@
 * /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。其中Anime4K为原作者的高预设，默认不启用，如果有需求，可在每次播放时按相应快捷键启用。
 
 * /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
+
+* /webui control：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），用于替代HTPC环境下的蓝牙键鼠（个人改动仅删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，有需求的用户可自行下载本目录覆盖到scripts文件夹启用本功能。）
 
 * /展示：图片展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
@@ -81,3 +87,5 @@
 * KrigBilateral&SSIM : https://gist.github.com/igv
 
 * NNEDI3 : https://github.com/bjin/mpv-prescalers
+
+* simple-mpv-webui : https://github.com/open-dynaMIX/simple-mpv-webui
