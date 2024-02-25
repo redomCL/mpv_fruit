@@ -33,11 +33,11 @@
 
 * 5.集成3款补帧方案(mpv_lazy的SVP PRO、RIFE STD)。
 
-* 6.集成了simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ）。
+* 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
+* 7.四种预设，适配不同性能的硬件和情境。
 
-* 8.四种预设，适配不同性能的硬件和情境。
+* 8.集成了simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ）。
 
 # 目录简介🥢(本项目不能覆盖更新)：
 
