@@ -51,7 +51,7 @@
 
 * /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
 
-* /webui control：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），用于替代HTPC环境下的蓝牙键鼠（个人改动仅删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，有需求的用户可自行下载本目录覆盖到scripts文件夹启用本功能。）
+* /webui控制：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），用于替代HTPC环境下的蓝牙键鼠（个人改动仅删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，有需求的用户可自行下载本目录覆盖到scripts文件夹启用本功能。）
 
 * /展示：图片展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
