@@ -37,7 +37,7 @@
 
 * 7.四种预设，适配不同性能的硬件和情境。
 
-* 8.集成了simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ）。
+* 8.集成了simple-mpv-webui远程控制。
 
 # 目录简介🥢(本项目不能覆盖更新)：
 
