@@ -51,7 +51,7 @@
 
 * /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
 
-* /webui控制：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，有需求的用户自行下载本目录覆盖到mpv根目录启用本功能。默认访问地址为"你的设备IP:8086"。
+* /webui控制：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，默认访问地址为"你的设备IP:8086"。
 
 * /展示：图片展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
