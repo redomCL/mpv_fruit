@@ -3052,7 +3052,7 @@ function tick()
             ass:new_event()
             ass:pos(display_w / 2, icon_y + 100)
             ass:an(8)
-            ass:append("拖入文件或地址进行播放")
+            ass:append("")
         end
         set_osd(display_w, display_h, ass.text, -1000)
 
