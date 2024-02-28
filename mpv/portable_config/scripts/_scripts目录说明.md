@@ -1,9 +1,6 @@
 # adevice-list.lua
 * 音频设备菜单脚本，来源：https://github.com/dyphire/mpv-config
 
-# auto_loudnorm.lua
-* 音频降混响度均衡脚本，来源：https://gist.github.com/hooke007/1ead3a9b9196d5de69e8d37add889efb
-
 # chapter-list.lua
 * 章节菜单脚本，来源：https://github.com/dyphire/mpv-config
 
