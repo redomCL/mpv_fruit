@@ -9,7 +9,7 @@ local msg = require('mp.msg')
 local o = {
     uosc_syntax = false,     -- toggle uosc menu syntax support
     max_title_length = 80,   -- limit the title length, set to 0 to disable.
-    max_playlist_items = 0,  -- limit the playlist items in submenu, set to 0 to disable.
+    max_playlist_items = 20, -- limit the playlist items in submenu, set to 0 to disable.
 }
 opts.read_options(o)
 
