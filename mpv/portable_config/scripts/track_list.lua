@@ -148,10 +148,10 @@ local function get_track_title(track, type, filename)
     if track['demux-h'] then
         h(track['demux-w'] and (track['demux-w'] .. 'x' .. track['demux-h'] or track['demux-h'] .. 'p'))
     end
-    if track['demux-fps'] then h(string.format('%.5g fps', track['demux-fps'])) end
+    if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
     if track['audio-channels'] then h(track['audio-channels'] .. ' ch') end
-    if track['demux-samplerate'] then h(string.format('%.5g kHz', track['demux-samplerate'] / 1000)) end
-    if track['demux-bitrate'] then h(string.format('%.5g kbps', track['demux-bitrate'] / 1000)) end
+    if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
+    if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end
     if track.lang then title = string.format('%s, %s', title, track.lang:upper()) end
     if #hints > 0 then title = string.format('%s\t[%s]', title, table.concat(hints, ', ')) end
     if track.forced then title = title .. ' Forced' end
