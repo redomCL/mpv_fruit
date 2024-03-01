@@ -1,26 +1,26 @@
-# adevice-list.lua
+# adevice-list.conf
 * 音频设备菜单脚本配置文件
 
-# load_plus.lua
-* 同类文件加载脚本配置文件
-
-# chapter-list.lua
+# chapter-list.conf
 * 章节菜单脚本配置文件
+
+# load_plus.conf
+* 同类文件加载脚本配置文件
 
 # osc.conf
 * 内置默认osc脚本配置文件
 
-# osc_fruit.lua
+# osc_fruit.conf
 * 自定义osc脚本配置文件
 
-# playlistmanager.lua
+# playlistmanager.conf
 * 高级播放列表脚本配置文件
 
-# stats_chs.lua
+# stats_chs.conf
 *解码简要汉化脚本配置文件
 
-# thumbfast.lua
+# thumbfast.conf
 * 预览图脚本配置文件
 
-# track-list.lua
+# track-list.conf
 * 轨道菜单脚本配置文件
