@@ -28,21 +28,14 @@ g.state.keybinds = {
 --  {'s',           'select_mode',   cursor.toggle_select_mode},
 --  {'S',           'select_item',   cursor.toggle_selection},
 --  {'Ctrl+a',      'select_all',    cursor.select_all}
-    {'KP_ENTER',    'play',          function() playlist.add_files('replace', false) end},
+    {'ENTER',       'play',          function() playlist.add_files('replace', false) end},
     {'ESC',         'close',         controls.escape},
-    {'KP4',         'up_dir',        movement.up_dir},
-	{'KP6',         'down_dir',      movement.down_dir},
-    {'KP8',         'scroll_up',     function() cursor.scroll(-1, o.wrap) end,          {repeatable = true}},
-	{'KP5',         'scroll_down',   function() cursor.scroll(1, o.wrap) end,           {repeatable = true}},
-    {'KP7',         'page_up',       function() cursor.scroll(-o.num_entries) end,      {repeatable = true}},
-	{'KP9',         'page_down',     function() cursor.scroll(o.num_entries) end,       {repeatable = true}},
-	{'ENTER',       'play',          function() playlist.add_files('replace', false) end},
-	{'LEFT',        'up_dir',        movement.up_dir},
-	{'RIGHT',       'down_dir',      movement.down_dir},
+    {'LEFT',        'up_dir',        movement.up_dir},
+    {'RIGHT',       'down_dir',      movement.down_dir},
     {'UP',          'scroll_up',     function() cursor.scroll(-1, o.wrap) end,          {repeatable = true}},
-	{'DOWN',        'scroll_down',   function() cursor.scroll(1, o.wrap) end,           {repeatable = true}},
+    {'DOWN',        'scroll_down',   function() cursor.scroll(1, o.wrap) end,           {repeatable = true}},
     {'PGUP',        'page_up',       function() cursor.scroll(-o.num_entries) end,      {repeatable = true}},
-	{'PGDWN',       'page_down',     function() cursor.scroll(o.num_entries) end,       {repeatable = true}},
+    {'PGDWN',       'page_down',     function() cursor.scroll(o.num_entries) end,       {repeatable = true}},
 }
 
 --a map of key-keybinds - only saves the latest keybind if multiple have the same key code
