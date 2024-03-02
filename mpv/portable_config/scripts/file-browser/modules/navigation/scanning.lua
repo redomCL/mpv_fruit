@@ -164,7 +164,7 @@ local function update(moving_adjacent)
     API.coroutine.run(function()
         g.state.co = coroutine.running()
         update_list(moving_adjacent)
-        g.state.empty_text = "empty directory"
+        g.state.empty_text = "文件夹为空"
         ass.update_ass()
     end)
 end
