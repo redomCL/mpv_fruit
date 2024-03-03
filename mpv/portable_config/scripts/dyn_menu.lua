@@ -8,6 +8,7 @@ local msg = require('mp.msg')
 -- user options
 local o = {
     uosc_syntax = false,     -- toggle uosc menu syntax support
+    escape_title = true,     -- escape & to && in menu title
     max_title_length = 80,   -- limit the title length, set to 0 to disable.
     max_playlist_items = 20, -- limit the playlist items in submenu, set to 0 to disable.
 }
@@ -232,8 +233,8 @@ local function build_track_items(list, type, prop, prefix)
             local state = {}
             -- there may be 2 tracks selected at the same time, for example: subtitle
             if track.selected then
-                table.insert(state, 'checked')
-                if track.id ~= pos then table.insert(state, 'disabled') end
+                state[#state + 1] = 'checked'
+                if track.id ~= pos then state[#state + 1] = 'disabled' end
             end
 
             items[#items + 1] = {
@@ -281,11 +282,11 @@ local function update_tracks_menu(menu)
     local items_s = build_track_items(track_list, 'sub', 'sid', true)
 
     -- append video/audio/sub tracks into one submenu, separated by a separator
-    for _, item in ipairs(items_v) do table.insert(submenu, item) end
-    if #submenu > 0 and #items_a > 0 then table.insert(submenu, { type = 'separator' }) end
-    for _, item in ipairs(items_a) do table.insert(submenu, item) end
-    if #submenu > 0 and #items_s > 0 then table.insert(submenu, { type = 'separator' }) end
-    for _, item in ipairs(items_s) do table.insert(submenu, item) end
+    for _, item in ipairs(items_v) do submenu[#submenu + 1] = item end
+    if #submenu > 0 and #items_a > 0 then submenu[#submenu + 1] = { type = 'separator' } end
+    for _, item in ipairs(items_a) do submenu[#submenu + 1] = item end
+    if #submenu > 0 and #items_s > 0 then submenu[#submenu + 1] = { type = 'separator' } end
+    for _, item in ipairs(items_s) do submenu[#submenu + 1] = item end
 end
 
 -- handle #@tracks/<type> menu update for given type
@@ -295,7 +296,7 @@ local function update_track_menu(menu, type, prop)
     if #track_list == 0 then return end
 
     local items = build_track_items(track_list, type, prop, false)
-    for _, item in ipairs(items) do table.insert(submenu, item) end
+    for _, item in ipairs(items) do submenu[#submenu + 1] = item end
 end
 
 -- handle #@chapters menu update
@@ -373,18 +374,37 @@ local function update_playlist_menu(menu)
     local playlist = get('playlist', {})
     if #playlist == 0 then return end
 
-    for id, item in ipairs(playlist) do
-        if o.max_playlist_items > 0 and id > o.max_playlist_items then break end
+    local from, to = 1, #playlist
+    if o.max_playlist_items > 0 then
+        local pos = get('playlist-playing-pos', -1)
+        if pos == -1 then pos = get('playlist-pos', -1) end
+        local mid = math.floor(o.max_playlist_items / 2)
+        from, to = pos + 1 - mid, pos + (o.max_playlist_items - mid)
+        if from < 1 then from, to = 1, o.max_playlist_items end
+        if to > #playlist then from, to = #playlist - o.max_playlist_items + 1, #playlist end
+    end
+
+    if from > 1 then
         submenu[#submenu + 1] = {
-            title = build_playlist_title(item, id - 1),
-            cmd = string.format('playlist-play-index %d', id - 1),
-            state = item.current and { 'checked' } or {},
+            title = string.format('...\t[%d]', from - 1),
+            cmd = has_uosc and 'script-message-to uosc playlist' or 'ignore',
         }
     end
 
-    if o.max_playlist_items > 0 and #playlist > o.max_playlist_items then
+    for id = from, to do
+        local item = playlist[id]
+        if item then
+            submenu[#submenu + 1] = {
+                title = build_playlist_title(item, id - 1),
+                cmd = string.format('playlist-play-index %d', id - 1),
+                state = (item.playing or item.current) and { 'checked' } or {},
+            }
+        end
+    end
+
+    if to < #playlist then
         submenu[#submenu + 1] = {
-            title = string.format('...\t[%d]', #playlist - o.max_playlist_items),
+            title = string.format('...\t[%d]', #playlist - to),
             cmd = has_uosc and 'script-message-to uosc playlist' or 'ignore',
         }
     end
@@ -418,7 +438,7 @@ local function update_menu_state(menu)
 
     local state = {}
     if type(res) == 'string' then
-        for s in res:gmatch('[^,%s]+') do table.insert(state, s) end
+        for s in res:gmatch('[^,%s]+') do state[#state + 1] = s end
     end
     menu.item.state = state
     menu_items_dirty = true
@@ -456,7 +476,7 @@ local function dyn_menu_load(item, keyword)
         state = nil,
         dirty = false,
     }
-    table.insert(dyn_menus, menu)
+    dyn_menus[#dyn_menus + 1] = menu
     keyword_to_menu[keyword] = menu
 
     local expr = keyword:match('^state=(.-)%s*$')
@@ -592,8 +612,12 @@ end
 
 -- parse input.conf, return menu items
 local function parse_input_conf(conf)
-    local items = {}
-    local by_id = {}
+    local function parse_line(line)
+        local c = line:match('^%s*#')
+        if c and (not o.uosc_syntax) then return end
+        local key, cmd = line:match('%s*([%S]+)%s+(.-)%s*$')
+        return ((o.uosc_syntax and c) and '' or key), cmd
+    end
 
     local function extract_title(cmd)
         if not cmd or cmd == '' then return '' end
@@ -620,39 +644,40 @@ local function parse_input_conf(conf)
         return list
     end
 
+    local function append_menu(menu, type, title, cmd, submenu)
+        menu[#menu + 1] = {
+            type = type,
+            title = (title and o.escape_title) and title:gsub('&', '&&') or title,
+            cmd = cmd,
+            submenu = submenu,
+        }
+    end
+
+    local items = {}
+    local by_id = {}
+
     for line in conf:gmatch('[^\r\n]+') do
-        if line:sub(1, 1) ~= '#' or o.uosc_syntax then
-            local key, cmd = line:match('%s*([%S]+)%s+(.-)%s*$')
-            local title = extract_title(cmd)
-            local list = split_title(title)
+        local key, cmd = parse_line(line)
+        local list = split_title(extract_title(cmd))
 
-            local submenu_id = ''
-            local target_menu = items
+        local submenu_id = ''
+        local target_menu = items
 
-            for id, name in ipairs(list) do
-                if id < #list then
-                    submenu_id = submenu_id .. name
-                    if not by_id[submenu_id] then
-                        local submenu = {}
-                        by_id[submenu_id] = submenu
-                        target_menu[#target_menu + 1] = {
-                            title = name,
-                            type = 'submenu',
-                            submenu = submenu,
-                        }
-                    end
-                    target_menu = by_id[submenu_id]
+        for id, name in ipairs(list) do
+            if id < #list then
+                submenu_id = submenu_id .. name
+                if not by_id[submenu_id] then
+                    local submenu = {}
+                    by_id[submenu_id] = submenu
+                    append_menu(target_menu, 'submenu', name, nil, submenu)
+                end
+                target_menu = by_id[submenu_id]
+            else
+                if name == '-' or (o.uosc_syntax and name:sub(1, 3) == '---') then
+                    append_menu(target_menu, 'separator')
                 else
-                    if name == '-' or (o.uosc_syntax and name:sub(1, 3) == '---') then
-                        target_menu[#target_menu + 1] = {
-                            type = 'separator',
-                        }
-                    else
-                        target_menu[#target_menu + 1] = {
-                            title = (key ~= '' and key ~= '_') and (name .. "\t" .. key) or name,
-                            cmd = cmd,
-                        }
-                    end
+                    local title = (key ~= '' and key ~= '_') and (name .. "\t" .. key) or name
+                    append_menu(target_menu, nil, title, cmd)
                 end
             end
         end

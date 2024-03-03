@@ -80,11 +80,11 @@ end
 -- open a single file
 local function open_file(i, path, action)
     if action == 'add-sub' then
-        mp.commandv('sub-add', path)
+        mp.commandv('sub-add', path, 'auto')
     elseif action == 'add-video' then
-        mp.commandv('video-add', path)
+        mp.commandv('video-add', path, 'auto')
     elseif action == 'add-audio' then
-        mp.commandv('audio-add', path)
+        mp.commandv('audio-add', path, 'auto')
     elseif action == 'bd-iso' then
         open_bluray(path)
     elseif action == 'dvd-iso' then
