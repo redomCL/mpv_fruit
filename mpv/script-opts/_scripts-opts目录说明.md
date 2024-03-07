@@ -4,6 +4,9 @@
 # chapter-list.conf
 * 章节菜单脚本配置文件
 
+# file_browser.conf
+* 文件浏览脚本配置文件
+
 # load_plus.conf
 * 同类文件加载脚本配置文件
 
