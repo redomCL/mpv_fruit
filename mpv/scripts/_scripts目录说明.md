@@ -1,3 +1,6 @@
+# file_browser
+* 文件浏览脚本，来源：https://github.com/dyphire/mpv-config
+
 # adevice-list.lua
 * 音频设备菜单脚本，来源：https://github.com/dyphire/mpv-config
 
