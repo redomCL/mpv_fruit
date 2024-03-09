@@ -21,7 +21,7 @@
 
 # 配置特性🍺：
 
-* 0.基于mpv player、mpv_lazy、dyphire/mpv-config重新组装，仅专注本地高质量播放(PC/HTPC是不同的高质量情景)。
+* 0.基于mpv player、mpv_lazy、dyphire/mpv-config重新组装，仅专注本地PC/HTPC高质量播放(PC/HTPC是不同的高质量情景)。
 
 * 1.使用mpv_lazy作者的osc_plus（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
 
