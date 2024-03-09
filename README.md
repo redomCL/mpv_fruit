@@ -21,7 +21,7 @@
 
 # 配置特性🍺：
 
-* 0.基于mpv player、mpv_lazy、dyphire/mpv-config重新组装，仅专注本地PC/HTPC高质量播放(PC/HTPC是不同的高质量情景)，对于PC场景，默认预设了全为前方的多声道(side/wide side)，如果用户没有设备，则会自动转到普通立体声声道（auto-safe）。对于HTPC，默认预设了常规的7.1、5.1、4.0以及立体声。
+* 0.基于mpv player、mpv_lazy、dyphire/mpv-config重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
 
 * 1.使用mpv_lazy作者的osc_plus（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
 
@@ -35,7 +35,7 @@
 
 * 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 7.四种预设，适配不同性能的硬件和情境。
+* 7.四种预设，适配不同性能的硬件和情境。详解查看 wiki：https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE 。
 
 * 8.集成了simple-mpv-webui远程控制。
 
@@ -57,7 +57,7 @@
   
 * /补帧套件：配置好的补帧套件和对应的快捷键配置，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，每次播放按相应快捷键启用。
 
-* /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解可查看wiki。
+* /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解查看wiki： https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE 。
 
 # 预设对比🆚:
 
