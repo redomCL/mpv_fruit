@@ -19,9 +19,6 @@
 # playlistmanager.conf
 * 高级播放列表脚本配置文件
 
-# stats_chs.conf
-*解码简要汉化脚本配置文件
-
 # thumbfast.conf
 * 预览图脚本配置文件
 
