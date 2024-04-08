@@ -1,6 +1,28 @@
 -- Copyright (c) 2023-2024 tsl0922. All rights reserved.
 -- SPDX-License-Identifier: GPL-2.0-only
 
+--修改内容：->
+
+--1.数据流单位
+--if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
+--if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
+--if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end
+--if #hints > 0 then title = string.format('%s [%s]', title, table.concat(hints, ', ')) end
+
+--2.播放列表长度和数量
+--max_title_length = 80,   -- limit the title length, set to 0 to disable.
+--max_playlist_items = 0, -- limit the playlist items in submenu, set to 0 to disable.
+
+--3.播放列表显示文件名
+--local title = ''
+--local ext = ''
+--local _, filename = utils.split_path(item.filename)
+--local n, e = filename:match('^(.+)%.([%w-_]+)$')
+--title = filename
+--ext = e
+--title = title ~= '' and abbr_title(title)
+--return ext ~= '' and title .. "\t" .. ext:upper()
+
 local opts = require('mp.options')
 local utils = require('mp.utils')
 local msg = require('mp.msg')
@@ -355,17 +377,15 @@ local function update_audio_devices_menu(menu)
 end
 
 -- build playlist item title
-local function build_playlist_title(item, id)
-    local title = item.title or ''
+local function build_playlist_title(item)
+    local title = ''
     local ext = ''
-    if item.filename and item.filename ~= '' then
-        local _, filename = utils.split_path(item.filename)
-        local n, e = filename:match('^(.+)%.([%w-_]+)$')
-        if title == '' then title = n and n or filename end
-        if e then ext = e end
-    end
-    title = title ~= '' and abbr_title(title) or 'Item ' .. id
-    return ext ~= '' and title .. "\t" .. ext:upper() or title
+    local _, filename = utils.split_path(item.filename)
+    local n, e = filename:match('^(.+)%.([%w-_]+)$')
+    title = filename
+    ext = e
+    title = title ~= '' and abbr_title(title)
+    return ext ~= '' and title .. "\t" .. ext:upper()
 end
 
 -- handle #@playlist menu update

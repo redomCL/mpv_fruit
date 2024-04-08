@@ -16,6 +16,13 @@
     https://github.com/CogentRedTester/mpv-scroll-list
 ]]
 
+--修改内容：->
+
+--数据流单位
+--if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
+--if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
+--if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end
+
 local mp = require 'mp'
 local opts = require("mp.options")
 local propNative = mp.get_property_native
