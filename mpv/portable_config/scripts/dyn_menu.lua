@@ -15,13 +15,7 @@
 
 --3.播放列表显示文件名
 --local title = ''
---local ext = ''
---local _, filename = utils.split_path(item.filename)
---local n, e = filename:match('^(.+)%.([%w-_]+)$')
---title = filename
---ext = e
---title = title ~= '' and abbr_title(title)
---return ext ~= '' and title .. "\t" .. ext:upper()
+--title = title ~= '' and abbr_title(title) or '原盘 ' .. id
 
 local opts = require('mp.options')
 local utils = require('mp.utils')
@@ -377,15 +371,17 @@ local function update_audio_devices_menu(menu)
 end
 
 -- build playlist item title
-local function build_playlist_title(item)
+local function build_playlist_title(item, id)
     local title = ''
     local ext = ''
-    local _, filename = utils.split_path(item.filename)
-    local n, e = filename:match('^(.+)%.([%w-_]+)$')
-    title = filename
-    ext = e
-    title = title ~= '' and abbr_title(title)
-    return ext ~= '' and title .. "\t" .. ext:upper()
+    if item.filename and item.filename ~= '' then
+        local _, filename = utils.split_path(item.filename)
+        local n, e = filename:match('^(.+)%.([%w-_]+)$')
+        if title == '' then title = n and n or filename end
+        if e then ext = e end
+    end
+    title = title ~= '' and abbr_title(title) or '原盘 ' .. id
+    return ext ~= '' and title .. "\t" .. ext:upper() or title
 end
 
 -- handle #@playlist menu update
