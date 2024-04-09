@@ -7,7 +7,6 @@
 --if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
 --if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
 --if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end
---if #hints > 0 then title = string.format('%s [%s]', title, table.concat(hints, ', ')) end
 
 --2.播放列表长度和数量
 --max_title_length = 80,   -- limit the title length, set to 0 to disable.
