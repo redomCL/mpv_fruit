@@ -61,7 +61,7 @@
 |------------- |--------------|-----------------|------------------------|-------------------------|
 |1[低]|移动端|auto-safe|新渲染器<br>缩放算法：内置的profile＝fast|默认(fruit)|
 |2[中]|平&emsp;衡|d3d11va|新渲染器<br>缩放算法：内置的profile=gpu-hq|默认(fruit)|
-|3[高]|高精度[默认预设]<br>默认设置了多声道，如果有问题请在mpv.conf中设置"audio-channels=stereo"|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)，开启缩放优化<br>外置KrigBilateral+NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|
+|3[高]|高精度[默认预设]<br>[默认设置了多声道，如果有问题请在mpv.conf中设置"audio-channels=stereo"]|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)，开启缩放优化<br>外置KrigBilateral+NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|
 |4[HTPC]|用于HTPC[配置同3，但固定了一些HTPC该有的设置]：<br>√自动进入全屏<br>√音频设备独占<br>√杜比家族、DTS家族直通|配置同3|配置同3|配置同3|
 
 # 使用了以下项目🔍：
