@@ -59,9 +59,9 @@
 
 |级别          |预设          |解码             |渲染                    |色深抖动 
 |------------- |--------------|-----------------|------------------------|-------------------------|
-|1[低]|移动端|auto-safe|新渲染器<br>缩放算法：内置的profile＝fast|默认(fruit)|
-|2[中]|平&emsp;衡|d3d11va|新渲染器<br>缩放算法：内置的profile=gpu-hq|默认(fruit)|
-|3[高]|高质量[默认预设]<br>[默认设置了多声道，如果有问题请在mpv.conf中设置"audio-channels=stereo"]|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)，开启缩放优化<br>外置KrigBilateral+NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|
+|1[低]|移动端：<br>适合低性能笔记本和台式，噪音很低|auto-safe|新渲染器<br>缩放算法：内置的profile＝fast|默认(fruit)|
+|2[中]|平&emsp;衡：<br>适合普通笔记本和台式，硬件能耗比差可能有噪音，尤其是笔记本|d3d11va|新渲染器<br>缩放算法：内置的profile=gpu-hq|默认(fruit)|
+|3[高]|高质量[默认预设]：<br>不考虑功耗的追求画质，仅适合性能好的台式，笔记本噪音可能很大。默认设置了多声道，如果有问题请在mpv.conf中设置"audio-channels=stereo"或其他目标声道数|CPU|新渲染器<br>缩放算法：<br>deband=yes<br>cscale=ewa_lanczos<br>scale=ewa_lanczos<br>sigmoid-upscaling=yes<br>dscale=lanczos<br>correct-downscaling=yes<br>抗震铃(部分失效参数不删除，或许上游作者会重新设计)，开启缩放优化<br>外置KrigBilateral+NNEDI3+SSIM着色器|误差抖动(内核为floyd-steinberg)|
 |4[HTPC]|用于HTPC[配置同3，但固定了一些HTPC该有的设置]：<br>√以全屏启动和播放<br>√音频设备独占<br>√杜比家族、DTS家族直通|配置同3|配置同3|配置同3|
 
 # 使用了以下项目🔍：
