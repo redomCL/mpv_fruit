@@ -27,6 +27,3 @@
 
 # track-list.conf
 * 轨道菜单脚本配置文件
-
-# webui.conf
-* webui脚本配置文件
