@@ -15,6 +15,15 @@ SOURCE COMMIT_ c84bb1ce67f2dd3adb974c49a66d28c0cf55d39d
 ]]
 
 -- 保持禁用原始OSC
+
+--修改内容：->
+
+--1.播放列表显示文件名：
+--local title = filename
+
+--2.皮肤名字修改：
+--osc_plus->osc_fruit
+
 if mp.get_property_native("osc") then
     local mouse_stat = mp.get_property_native("input-cursor")
     if mouse_stat then
@@ -1026,7 +1035,7 @@ function get_playlist()
 
     local message = string.format("播放列表 [%d/%d]\n", pos, count)
     for i, v in ipairs(limlist) do
-        local title = v.title
+        local title = filename
         local _, filename = utils.split_path(v.filename)
         if title == nil then
             title = filename
