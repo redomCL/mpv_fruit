@@ -46,7 +46,7 @@ local o = {
     --amount of entries to show before slicing. Optimal value depends on font/video size etc.
     num_entries = 16,
     --slice long filenames, and how many chars to show
-    max_title_length = 100,
+    max_title_length = 85,
     -- wrap the cursor around the top and bottom of the list
     wrap = true,
     -- set dynamic keybinds to bind when the list is open
