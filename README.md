@@ -50,6 +50,8 @@
 
 * /webui控制：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，默认访问地址为"你的设备IP:8086"。
 
+* /备用的osc：几款备用的osc，根据喜好选择切换。
+
 * /展示：播放器效果展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
 * /补帧套件：配置好的补帧套件和对应的快捷键配置，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，每次播放按相应快捷键启用。
@@ -78,6 +80,10 @@
 * mpv_lazy : https://github.com/hooke007/MPV_lazy
 
 * tsl0922/mpv-menu-plugin : https://github.com/tsl0922/mpv-menu-plugin
+
+* po5/thumbfast : https://github.com/po5/thumbfast
+
+* tomasklaen/uosc: https://github.com/tomasklaen/uosc
 
 * Anime4K : https://github.com/bloc97/Anime4K
 
