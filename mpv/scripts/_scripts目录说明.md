@@ -14,7 +14,7 @@
 * 同类文件加载脚本，来源：https://github.com/hooke007/MPV_lazy
 
 # osc_fruit.lua
-* 自定义osc脚本，来源：https://github.com/hooke007/MPV_lazy
+* osc_fruit自定义osc脚本，来源：https://github.com/hooke007/MPV_lazy
 
 # playlistmanager.lua
 * 高级播放列表脚本，来源：https://github.com/dyphire/mpv-config
