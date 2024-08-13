@@ -2,8 +2,18 @@
 
 --修改内容：->
 
---播放列表显示文件名
---title = item_filename or (is_url and item.filename or serialize_path(item.filename).basename),
+--播放列表始终显示文件名而不是标题
+--		local items = {}
+--		for index, item in ipairs(playlist) do
+--			local is_url = is_protocol(item.filename)
+--			items[index] = {
+--				title = is_url and item.filename or serialize_path(item.filename).basename,
+--				hint = tostring(index),
+--				active = item.current,
+--				value = index,
+--			}
+--		end
+--		return items
 
 local uosc_version = '5.2.0'
 
@@ -880,9 +890,8 @@ bind_command('playlist', create_self_updating_menu_opener({
 		local items = {}
 		for index, item in ipairs(playlist) do
 			local is_url = is_protocol(item.filename)
-			local item_title = type(item.title) == 'string' and #item.title > 0 and item.title or false
 			items[index] = {
-				title = item_filename or (is_url and item.filename or serialize_path(item.filename).basename),
+				title = is_url and item.filename or serialize_path(item.filename).basename,
 				hint = tostring(index),
 				active = item.current,
 				value = index,
