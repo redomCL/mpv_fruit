@@ -10,9 +10,6 @@
 # load_plus.conf
 * 同类文件加载脚本配置文件
 
-# osc.conf
-* 内置默认osc脚本配置文件
-
 # osc_fruit.conf
 * osc_fruit自定义osc脚本配置文件
 
