@@ -27,6 +27,3 @@
 
 # track-list.lua
 * 轨道菜单脚本，来源：https://github.com/dyphire/mpv-config
-
-# uosc.lua
-* uosc自定义osc脚本，来源：https://github.com/tomasklaen/uosc，参照：https://github.com/dyphire/mpv-config
