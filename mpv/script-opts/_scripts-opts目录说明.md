@@ -14,7 +14,7 @@
 * 内置默认osc脚本配置文件
 
 # osc_fruit.conf
-* 自定义osc脚本配置文件
+* osc_fruit自定义osc脚本配置文件
 
 # playlistmanager.conf
 * 高级播放列表脚本配置文件
