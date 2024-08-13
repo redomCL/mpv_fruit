@@ -24,17 +24,19 @@
 
 * 2.播放器实现的功能：章节列表、播放列表、音频设备列表、轨道列表。通过数字小键盘调节字幕的尺寸、位置。脚本尽可能显示简体中文，并统一了样式，字幕轨道默认选择简体中文。
 
-* 3.通过tsl0922的菜单脚本实现mpv的菜单，并根据个人使用习惯做了简化，该脚本实现的菜单响应速度很快。 
+* 3.备选了几款常见的osc并按照个人习惯进行了调整。
 
-* 4.集成KrigBilateral、NNEDI3、SSIM、Anime4K。
+* 4.通过tsl0922的菜单脚本实现mpv的菜单，并根据个人使用习惯做了简化，该脚本实现的菜单响应速度很快。 
 
-* 5.集成3款补帧方案（mpv_lazy的SVP PRO、RIFE STD）。
+* 5.集成KrigBilateral、NNEDI3、SSIM、Anime4K。
 
-* 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
+* 6.集成3款补帧方案（mpv_lazy的SVP PRO、RIFE STD）。
 
-* 7.四种预设，适配不同性能的硬件和情境。详解查看 wiki：https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE 。
+* 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 8.集成了simple-mpv-webui远程控制。
+* 8.四种预设，适配不同性能的硬件和情境。详解查看 wiki：https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE 。
+
+* 9.集成了simple-mpv-webui远程控制。
 
 # 目录简介🥢（本项目不能覆盖更新）：
 
