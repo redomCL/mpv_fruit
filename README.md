@@ -21,7 +21,7 @@
 
 * 0.基于[mpv player](https://mpv.io/)、[dyphire/mpv-config](https://github.com/dyphire/mpv-config)、[mpv_lazy](https://github.com/hooke007/MPV_lazy)重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
 
-* 1.使用mpv_lazy作者的osc_plus（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
+* 1.使用mpv_lazy作者的[osc_plus](https://github.com/hooke007/MPV_lazy/blob/2027fb8b2ec766896773c6803c9b7a33a4fc6f12/portable_config/scripts/osc_plus.lua)（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
 
 * 2.播放器实现的功能：章节列表、播放列表、音频设备列表、轨道列表。通过数字小键盘调节字幕的尺寸、位置。脚本尽可能显示简体中文，并统一了样式，字幕轨道默认选择简体中文。
 
