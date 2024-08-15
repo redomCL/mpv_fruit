@@ -1,14 +1,14 @@
 # adevice-list.conf
 * 音频设备菜单脚本配置文件
 
+# autoload.conf
+* 近似加载脚本配置文件
+
 # chapter-list.conf
 * 章节菜单脚本配置文件
 
 # file_browser.conf
 * 文件浏览脚本配置文件
-
-# load_plus.conf
-* 同类文件加载脚本配置文件
 
 # osc.conf
 * thumbfastosc自定义osc脚本配置文件
