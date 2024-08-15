@@ -4,11 +4,11 @@
 # adevice-list.lua
 * 音频设备菜单脚本，来源：https://github.com/dyphire/mpv-config
 
+# autoload.lua
+* 近似加载脚本，来源：https://github.com/dyphire/mpv-config
+
 # chapter-list.lua
 * 章节菜单脚本，来源：https://github.com/dyphire/mpv-config
-
-# load_plus.lua
-* 同类文件加载脚本，来源：https://github.com/hooke007/MPV_lazy
 
 # osc_fruit.lua
 * osc_fruit自定义osc脚本，来源：https://github.com/hooke007/MPV_lazy
