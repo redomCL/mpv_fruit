@@ -10,9 +10,6 @@
 # chapter-list.lua
 * 章节菜单脚本，来源：https://github.com/dyphire/mpv-config
 
-# dialog.lua、dyn_menu.lua、menu.dll
-* 播放器菜单组件，来源：https://github.com/tsl0922/mpv-menu-plugin
-
 # playlistmanager.lua
 * 高级播放列表脚本，来源：https://github.com/dyphire/mpv-config
 
