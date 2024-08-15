@@ -19,7 +19,7 @@
 
 # 配置特性🍺：
 
-* 0.基于mpv player、mpv_lazy、dyphire/mpv-config重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
+* 0.基于[mpv player](https://mpv.io/)、[dyphire/mpv-config](https://github.com/dyphire/mpv-config)、[mpv_lazy](https://github.com/hooke007/MPV_lazy)重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
 
 * 1.使用mpv_lazy作者的osc_plus（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
 
@@ -29,7 +29,7 @@
 
 * 4.通过tsl0922的菜单脚本实现mpv的菜单，并根据个人使用习惯做了简化，该脚本实现的菜单响应速度很快。 
 
-* 5.集成KrigBilateral、NNEDI3、SSIM、Anime4K。
+* 5.集成[KrigBilateral](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)、[NNEDI3](https://github.com/bjin/mpv-prescalers)、[SSIM](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)、[Anime4K](https://github.com/bloc97/Anime4K)。
 
 * 6.集成3款补帧方案（mpv_lazy的SVP PRO、RIFE STD）。
 
@@ -90,10 +90,12 @@
 
 * tomasklaen/uosc: https://github.com/tomasklaen/uosc
 
-* Anime4K : https://github.com/bloc97/Anime4K
-
-* KrigBilateral&SSIM : https://gist.github.com/igv
+* KrigBilateral : https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
 
 * NNEDI3 : https://github.com/bjin/mpv-prescalers
+
+* SSIM : https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
+
+* Anime4K : https://github.com/bloc97/Anime4K
 
 * simple-mpv-webui : https://github.com/open-dynaMIX/simple-mpv-webui
