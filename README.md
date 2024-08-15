@@ -35,7 +35,7 @@
 
 * 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 8.四种预设，适配不同性能的硬件和情境。详解查看 wiki：https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE 。
+* 8.四种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
 * 9.集成了simple-mpv-webui远程控制。
 
@@ -43,15 +43,15 @@
 
 ## 更多的目录及文件说明请查看各文件夹内的.md，并自行查阅mpv官方说明书
 
-* 推荐只用本项目配置文件，mpv播放器自行下载 https://github.com/shinchiro/mpv-winbuild-cmake/releases 。
+* 推荐只用本项目配置文件，mpv播放器自行下载 [shinchiro/mpv-winbuild-cmake](https://github.com/shinchiro/mpv-winbuild-cmake/releases) 。
 
-* 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询mpv官方最新说明书进行修正 https://mpv.io/manual/master/ ，或等待本项目更新。
+* 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询mpv官方最新说明书进行修正 [mpv manual master](https://mpv.io/manual/master/) ，或等待本项目更新。
 
 * /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。其中Anime4K为原作者的高预设，默认不启用，如果有需求，可在每次播放时按相应快捷键启用。
 
 * /svpflow：收集到的svp补帧引擎，来源：https://github.com/hooke007/MPV_lazy/discussions/114 留作备份。
 
-* /webui控制：simple-mpv-webui远程控制（ https://github.com/open-dynaMIX/simple-mpv-webui ），作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，默认访问地址为"你的设备IP:8086"。
+* /webui控制：[simple-mpv-webui远程控制](https://github.com/open-dynaMIX/simple-mpv-webui)，作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，默认访问地址为"你的设备IP:8086"。
 
 * /备用的osc：几款备用的osc，根据喜好选择切换。
 
@@ -59,7 +59,7 @@
   
 * /补帧套件：配置好的补帧套件和对应的快捷键配置，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，每次播放按相应快捷键启用。
 
-* /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解查看wiki： https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE 。
+* /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解查看[wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
 * ⚠注意：本项目的补帧、webui以体验形式存在，即存在随时不再支持、随时出现错误、随时删除的可能，因此在备用预设中，播放器的配置以及按键配置默认是屏蔽注释掉这些“体验版”功能的，如有需要，可自行删除注释符。
 
