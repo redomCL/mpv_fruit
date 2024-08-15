@@ -10,6 +10,9 @@
 # file_browser.conf
 * 文件浏览脚本配置文件
 
+# osc_fruit.conf
+* osc_fruit自定义osc脚本配置文件
+
 # playlistmanager.conf
 * 高级播放列表脚本配置文件
 
@@ -18,6 +21,3 @@
 
 # track-list.conf
 * 轨道菜单脚本配置文件
-
-# uosc.conf
-* uosc自定义osc脚本配置文件
