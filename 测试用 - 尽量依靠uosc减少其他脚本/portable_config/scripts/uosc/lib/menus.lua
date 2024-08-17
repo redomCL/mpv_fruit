@@ -4,7 +4,7 @@
 
 --修改内容：->
 
---1.不显示字幕在线搜索,所有类型轨道都添加禁用选项
+--1.不显示字幕在线搜索，所有类型轨道都添加禁用选项
 
 --function create_select_tracklist_type_menu_opener(menu_title, track_type, track_prop, load_command)
 --	local function serialize_tracklist(tracklist)
