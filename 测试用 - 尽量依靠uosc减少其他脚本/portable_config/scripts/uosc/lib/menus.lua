@@ -30,6 +30,10 @@
 --			disabled_item = {title = t('Disabled'), italic = true, muted = true, hint = '—', value = nil, active = true}
 --			items[#items + 1] = disabled_item
 
+--2.关闭删除播放列表功能
+
+--on_delete_item = opts.on_delete_item,
+
 function open_command_menu(data, opts)
 	local function run_command(command)
 		if type(command) == 'string' then
@@ -116,7 +120,6 @@ function create_self_updating_menu_opener(opts)
 					mp.unobserve_property(handle_active_prop_change)
 				end,
 				on_move_item = opts.on_move_item,
-				on_delete_item = opts.on_delete_item,
 			})
 	end
 end
