@@ -10,9 +10,6 @@
 # chapter-list.lua
 * 章节菜单脚本，来源：https://github.com/dyphire/mpv-config
 
-# dialog.lua、dyn_menu.lua、menu.dll(dyn_menu.lua有自定义修改)
-* 播放器菜单组件，来源：https://github.com/tsl0922/mpv-menu-plugin
-
 # osc_fruit.lua(有自定义修改)
 * osc_fruit自定义osc脚本，来源：https://github.com/hooke007/MPV_lazy
 
