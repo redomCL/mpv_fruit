@@ -2,7 +2,7 @@
 
 --修改内容：->
 
---播放列表始终显示文件名而不是标题
+--1.播放列表始终显示文件名而不是标题:
 --		local items = {}
 --		for index, item in ipairs(playlist) do
 --			local is_url = is_protocol(item.filename)
