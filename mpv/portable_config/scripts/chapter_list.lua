@@ -8,33 +8,30 @@
 ]]
 
 local msg = require 'mp.msg'
-local utils = require 'mp.utils'
 local opts = require("mp.options")
 
 local o = {
     -- header of the list
     -- %cursor% and %total% to be used to display the cursor position and the total number of lists
-    header = "章节列表 [%cursor%/%total%]\\N",
+    header = "Chapter List [%cursor%/%total%]\\N ------------------------------------",
     --list ass style overrides inside curly brackets
     --these styles will be used for the whole list. so you need to reset them for every line
     --read http://docs.aegisub.org/3.2/ASS_Tags/ for reference of tags
     global_style = [[]],
-    header_style = [[{\q2\fs30\c&H00ccff&}]],
-    list_style = [[{\q2\fs25\c&Hffffff&}]],
-    wrapper_style = [[{\c&H00ccff&\fs16}]],
-    cursor_style = [[{\c&H0000ff&}]],
-    selected_style = [[{\c&H0000ff&}]],
+    header_style = [[{\q2\fs30\c&00ccff&}]],
+    list_style = [[{\q2\fs20\c&Hffffff&}]],
+    wrapper_style = [[{\c&00ccff&\fs16}]],
+    cursor_style = [[{\c&00ccff&}]],
+    selected_style = [[{\c&Hfce788&}]],
     active_style = [[{\c&H33ff66&}]],
     cursor = [[➤\h]],
     indent = [[\h\h\h\h]],
     --amount of entries to show before slicing. Optimal value depends on font/video size etc.
     num_entries = 16,
     --slice long filenames, and how many chars to show
-    slice_longfilenames_amount = 100,
+    max_title_length = 100,
     -- wrap the cursor around the top and bottom of the list
     wrap = true,
-    -- reset cursor navigation when open the list
-    reset_cursor_on_close = true,
     -- set dynamic keybinds to bind when the list is open
     key_move_begin = "HOME",
     key_move_end = "END",
@@ -58,10 +55,14 @@ local paused = false
 --adding the source directory to the package path and loading the module
 package.path = mp.command_native({"expand-path", "~~/script-modules/?.lua;"}) .. package.path
 local list = require "scroll-list"
-local user_input_module, input = pcall(require, "user-input-module")
+
+local success, input = pcall(require, 'mp.input')
+if not success then
+    -- Requires: https://github.com/CogentRedTester/mpv-user-input
+    user_input_module, input = pcall(require, "user-input-module")
+end
 
 --modifying the list settings
-local original_open = list.open
 list.header = o.header
 list.cursor = o.cursor
 list.indent = o.indent
@@ -83,32 +84,63 @@ function list:format_header_string(str)
     return str
 end
 
---update the list when the current chapter changes
-function chapter_list(curr_chapter)
-    list.list = {}
-    local chapter_list = mp.get_property_native('chapter-list', {})
-    for i = 1, #chapter_list do
-        local item = {}
-        if (i - 1 == curr_chapter) then
-            if reset_curr then list.selected = curr_chapter + 1 end
-            item.style = o.active_style
-        end
+-- from http://lua-users.org/wiki/LuaUnicode
+local UTF8_PATTERN = '[%z\1-\127\194-\244][\128-\191]*'
 
-        local time = chapter_list[i].time
-        local title = chapter_list[i].title
-        if not title or title == '(unnamed)' or title == '' then
-            title = "Chapter " .. string.format("%02.f", i)
-        end
-        if title and title:len() > o.slice_longfilenames_amount + 5 then
-            title = title:sub(1, o.slice_longfilenames_amount) .. " ..."
-        end
-        if time < 0 then time = 0
-        else time = math.floor(time) end
-        item.ass = string.format("[%02d:%02d:%02d]", math.floor(time / 60 / 60), math.floor(time / 60) % 60, time % 60)
-        item.ass = item.ass .. '\\h\\h\\h' .. list.ass_escape(title)
-        list.list[i] = item
+-- return a substring based on utf8 characters
+-- like string.sub, but negative index is not supported
+local function utf8_sub(s, i, j)
+    if i > j then
+        return s
     end
-    list:update()
+
+    local t = {}
+    local idx = 1
+    for char in s:gmatch(UTF8_PATTERN) do
+        if i <= idx and idx <= j then
+            local width = #char > 2 and 2 or 1
+            idx = idx + width
+            t[#t + 1] = char
+        end
+    end
+    return table.concat(t)
+end
+
+--update the list when the current chapter changes
+local function chapter_list()
+    mp.observe_property('chapter-list', 'native', function(_, chapter_list)
+        mp.observe_property('chapter', 'number', function(_, curr_chapter)
+            list.list = {}
+            if chapter_list == nil then
+                list:update()
+                return
+            end
+            for i = 1, #chapter_list do
+                local item = {}
+                if (i - 1 == curr_chapter) then
+                    if reset_curr then list.selected = curr_chapter + 1 end
+                    item.style = o.active_style
+                end
+        
+                local time = chapter_list[i].time
+                local title = chapter_list[i].title
+                if not title or title == '(unnamed)' or title == '' then
+                    title = "Chapter " .. string.format("%02.f", i)
+                end
+                local title_clip = utf8_sub(title, 1, o.max_title_length)
+                if title ~= title_clip then
+                    title = title_clip .. "..."
+                end
+                if time < 0 then time = 0
+                else time = math.floor(time) end
+                item.ass = string.format("[%02d:%02d:%02d]", math.floor(time / 60 / 60), math.floor(time / 60) % 60, time % 60)
+                item.ass = item.ass .. '\\h\\h\\h' .. list.ass_escape(title)
+                list.list[i] = item
+            end
+            list:update()
+        end)
+    end)
+    list:toggle()
 end
 
 local function change_title_callback(user_input, err, chapter_index)
@@ -131,28 +163,57 @@ local function change_title_callback(user_input, err, chapter_index)
     if paused then return elseif o.pause_on_input then mp.set_property_native("pause", false) end
 end
 
+local function input_title(default_input, cursor_pos, chapter_index)
+    input.get({
+        prompt = 'Chapter title:',
+        default_text = default_input,
+        cursor_position = cursor_pos,
+        submit = function(text)
+            local chapter_list = mp.get_property_native("chapter-list")
+
+            if chapter_index > mp.get_property_number("chapter-list/count") then
+                msg.warn("can't set chapter title")
+                return
+            end
+
+            chapter_list[chapter_index].title = text
+            mp.set_property_native("chapter-list", chapter_list)
+            input.terminate()
+        end,
+        closed = function()
+            if paused then return elseif o.pause_on_input then mp.set_property_native("pause", false) end
+        end
+    })
+end
+
 --edit the selected chapter title
 local function edit_chapter()
-    local mpv_chapter_index = list.selected - 1
+    reset_curr = false
+    local chapter_index = list.selected - 1
     local chapter_list = mp.get_property_native("chapter-list")
+    local title = chapter_list[chapter_index + 1].title
 
-    if mpv_chapter_index == nil or mpv_chapter_index == -1 then
+    if chapter_index == nil or chapter_index == -1 then
         msg.verbose("no chapter selected, nothing to edit")
         return
     end
 
-    if not user_input_module then
+    if not input and not user_input_module then
         msg.error("no mpv-user-input, can't get user input, install: https://github.com/CogentRedTester/mpv-user-input")
         return
     end
-    -- ask user for chapter title
-    -- (+1 because mpv indexes from 0, lua from 1)
-    reset_curr = false
-    input.get_user_input(change_title_callback, {
-        request_text = "title of the chapter:",
-        default_input = chapter_list[mpv_chapter_index + 1].title,
-        cursor_pos = #(chapter_list[mpv_chapter_index + 1].title) + 1,
-    }, mpv_chapter_index + 1)
+
+    if user_input_module then
+        -- ask user for chapter title
+        -- (+1 because mpv indexes from 0, lua from 1)
+        input.get_user_input(change_title_callback, {
+            request_text = "Chapter title:",
+            default_input = title,
+            cursor_pos = #title + 1,
+        }, chapter_index + 1)
+    elseif input then
+        input_title(title, #title + 1, chapter_index + 1)
+    end
 
     if o.pause_on_input then
         paused = mp.get_property_native("pause")
@@ -182,21 +243,6 @@ local function open_chapter()
     end
 end
 
---reset cursor navigation when open the list
-local function reset_cursor()
-    if o.reset_cursor_on_close then
-        if mp.get_property('chapter') then
-            list.selected = mp.get_property_number('chapter') + 1
-            list:update()
-        end
-    end
-end
-
-function list:open()
-    reset_cursor()
-    original_open(self)
-end
-
 --dynamic keybinds to bind when the list is open
 list.keybinds = {}
 
@@ -219,17 +265,13 @@ add_keys(o.key_close_browser, 'close_browser', function() list:close() end, {})
 add_keys(o.key_remove_chapter, 'remove_chapter', remove_chapter, {})
 add_keys(o.key_edit_chapter, 'edit_chapter', edit_chapter, {})
 
-mp.register_script_message("toggle-chapter-browser", function() list:toggle() end)
-
-mp.observe_property('chapter', 'number', function(_, curr_chapter)
-    chapter_list(curr_chapter)
-end)
-
-mp.observe_property('chapter-list', 'native', function()
-    local curr_chapter = mp.get_property_number("chapter")
-    if curr_chapter then chapter_list(curr_chapter) end
-end)
+mp.register_script_message("toggle-chapter-browser", chapter_list)
 
 if user_input_module then
     mp.add_hook("on_unload", 50, function() input.cancel_user_input() end)
 end
+
+mp.register_event('end-file', function()
+    list:close()
+    mp.unobserve_property(chapter_list)
+end)
