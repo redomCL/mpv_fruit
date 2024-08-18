@@ -1,6 +1,9 @@
 # file_browser(\modules\keybinds.lua有自定义修改)
 * 文件浏览脚本，来源：https://github.com/dyphire/mpv-config
 
+# uosc(\main.lua,\elements\Menus.lua,\lib\menus.lua)
+* uosc自定义osc脚本，来源：https://github.com/tomasklaen/uosc，参照：https://github.com/dyphire/mpv-config
+
 # adevice-list.lua
 * 音频设备菜单脚本，来源：https://github.com/dyphire/mpv-config
 
@@ -21,6 +24,3 @@
 
 # track-list.lua(有自定义修改)
 * 轨道菜单脚本，来源：https://github.com/dyphire/mpv-config
-
-# uosc.lua
-* uosc自定义osc脚本，来源：https://github.com/tomasklaen/uosc，参照：https://github.com/dyphire/mpv-config
