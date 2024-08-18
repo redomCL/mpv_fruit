@@ -18,7 +18,7 @@
 
 --修改内容：->
 
---数据流单位
+--1.数据流单位：
 --if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
 --if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
 --if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end

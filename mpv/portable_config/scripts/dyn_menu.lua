@@ -3,16 +3,16 @@
 
 --修改内容：->
 
---1.数据流单位
+--1.数据流单位：
 --if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
 --if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
 --if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end
 
---2.播放列表长度和数量
+--2.播放列表长度和数量：
 --max_title_length = 60,   -- limit the title length, set to 0 to disable.
 --max_playlist_items = 0, -- limit the playlist items in submenu, set to 0 to disable.
 
---3.播放列表显示文件名
+--3.播放列表显示文件名：
 --local title = ''
 --title = title ~= '' and abbr_title(title) or '原盘 ' .. id
 
