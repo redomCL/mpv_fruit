@@ -1,5 +1,5 @@
 --[[
-    * adevice-list.lua v.2023-05-21
+    * adevice-list.lua v.2024-08-18
     *
     * AUTHORS: dyphire
     * License: MIT
@@ -19,16 +19,16 @@ local opts = require("mp.options")
 local o = {
     -- header of the list
     -- %cursor% and %total% to be used to display the cursor position and the total number of lists
-    header = "音频设备 [%cursor%/%total%]\\N",
+    header = "Adevice List [%cursor%/%total%]\\N ------------------------------------",
     --list ass style overrides inside curly brackets
     --these styles will be used for the whole list. so you need to reset them for every line
     --read http://docs.aegisub.org/3.2/ASS_Tags/ for reference of tags
     global_style = [[]],
-    header_style = [[{\q2\fs30\c&H00ccff&}]],
-    list_style = [[{\q2\fs25\c&Hffffff&}]],
-    wrapper_style = [[{\c&H00ccff&\fs16}]],
-    cursor_style = [[{\c&H0000ff&}]],
-    selected_style = [[{\c&H0000ff&}]],
+    header_style = [[{\q2\fs30\c&00ccff&}]],
+    list_style = [[{\q2\fs20\c&Hffffff&}]],
+    wrapper_style = [[{\c&00ccff&\fs16}]],
+    cursor_style = [[{\c&00ccff&}]],
+    selected_style = [[{\c&Hfce788&}]],
     active_style = [[{\c&H33ff66&}]],
     cursor = [[➤\h]],
     indent = [[\h\h\h\h]],
@@ -82,10 +82,18 @@ end
 local function adevice_list()
     list.list = {}
     local adeviceList = mp.get_property_native('audio-device-list', {})
+    local current_name = mp.get_property_native('audio-device')
+    if list.selected > 0 and string.find(adeviceList[list.selected].name, current_name) == nil then
+        list.selected = 0
+    end
     for i = 1, #adeviceList do
         local item = {}
+        if current_name ~= nil then
+            if adeviceList[i].name == current_name then
+                list.selected = i
+            end
+        end
         if (i == list.selected) then
-            current_name = adeviceList[i].name
             item.style = o.active_style
             item.ass = "■ " .. list.ass_escape(adeviceList[i].description)
         else
@@ -107,6 +115,7 @@ end
 --reset cursor navigation when open the list
 local function reset_cursor()
     local adeviceList = mp.get_property_native('audio-device-list', {})
+    local current_name = mp.get_property_native('audio-device')
     if current_name ~= nil and list.selected > 0 then
         if string.find(adeviceList[list.selected].name, current_name) == nil then
             list.selected = 0
@@ -154,3 +163,8 @@ mp.observe_property('audio-device-list', 'string', function()
 end)
 
 mp.register_script_message("toggle-adevice-browser", function() list:toggle() end)
+
+mp.register_event('end-file', function()
+    list:close()
+    mp.unobserve_property(adevice_list)
+end)
