@@ -18,7 +18,7 @@
 
 --修改内容：->
 
---数据流单位
+--1.数据流单位：
 --if track['demux-fps'] then h(string.format('%.3f fps', track['demux-fps'])) end
 --if track['demux-samplerate'] then h(string.format('%.0f kHz', track['demux-samplerate'] / 1000)) end
 --if track['demux-bitrate'] then h(string.format('%.0f kbps', track['demux-bitrate'] / 1000)) end
@@ -46,7 +46,7 @@ local o = {
     --amount of entries to show before slicing. Optimal value depends on font/video size etc.
     num_entries = 16,
     --slice long filenames, and how many chars to show
-    max_title_length = 85,
+    max_title_length = 100,
     -- wrap the cursor around the top and bottom of the list
     wrap = true,
     -- set dynamic keybinds to bind when the list is open
