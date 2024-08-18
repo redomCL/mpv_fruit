@@ -26,8 +26,7 @@ local Menu = class(Element)
 
 --修改内容：->
 
---1.删除不需要的按键绑定
-
+--1.按键绑定修改：
 --	self:add_key_binding('up', 'menu-prev1', self:create_key_action('prev'), 'repeatable')
 --	self:add_key_binding('down', 'menu-next1', self:create_key_action('next'), 'repeatable')
 --	self:add_key_binding('left', 'menu-back1', self:create_key_action('key_left'))
