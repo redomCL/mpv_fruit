@@ -38,6 +38,7 @@ local Menu = class(Element)
 --	self:add_key_binding('pgdwn', 'menu-page-down', self:create_key_action('on_pgdwn'), 'repeatable')
 --	self:add_key_binding('home', 'menu-home', self:create_key_action('on_home'))
 --	self:add_key_binding('end', 'menu-end', self:create_key_action('on_end'))
+--	self:add_key_binding('ctrl+f', 'menu-search', self:create_key_action('search_start'))
 
 function Menu:open(data, callback, opts)
 	local open_menu = self:is_open()
@@ -1048,7 +1049,6 @@ function Menu:enable_key_bindings()
 	if self.type_to_search then
 		self:search_enable_key_bindings()
 	else
-		self:add_key_binding('/', 'menu-search1', self:create_key_action('search_start'))
 		self:add_key_binding('ctrl+f', 'menu-search2', self:create_key_action('search_start'))
 	end
 end
