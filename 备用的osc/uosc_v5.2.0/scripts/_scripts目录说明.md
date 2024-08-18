@@ -1,4 +1,4 @@
-# file_browser
+# file_browser(\modules\keybinds.lua有自定义修改)
 * 文件浏览脚本，来源：https://github.com/dyphire/mpv-config
 
 # adevice-list.lua
@@ -10,13 +10,16 @@
 # chapter-list.lua
 * 章节菜单脚本，来源：https://github.com/dyphire/mpv-config
 
+# dialog.lua、dyn_menu.lua、menu.dll(dyn_menu.lua有自定义修改)
+* 播放器菜单组件，来源：https://github.com/tsl0922/mpv-menu-plugin
+
 # playlistmanager.lua
 * 高级播放列表脚本，来源：https://github.com/dyphire/mpv-config
 
 # thumbfast.lua
 * 预览图脚本，来源：https://github.com/dyphire/mpv-config
 
-# track-list.lua
+# track-list.lua(有自定义修改)
 * 轨道菜单脚本，来源：https://github.com/dyphire/mpv-config
 
 # uosc.lua

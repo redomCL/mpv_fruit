@@ -23,6 +23,22 @@ local Menu = class(Element)
 ---@param data MenuData
 ---@param callback MenuCallback
 ---@param opts? MenuOptions
+
+--修改内容：->
+
+--1.按键绑定修改：
+--	self:add_key_binding('up', 'menu-prev1', self:create_key_action('prev'), 'repeatable')
+--	self:add_key_binding('down', 'menu-next1', self:create_key_action('next'), 'repeatable')
+--	self:add_key_binding('left', 'menu-back1', self:create_key_action('key_left'))
+--	self:add_key_binding('right', 'menu-select1', self:create_key_action('key_right'))
+--	self:add_key_binding('enter', 'menu-select-alt3', self:create_key_action('open_selected_item_preselect'))
+--	self:add_key_binding('kp_enter', 'menu-select-alt4', self:create_key_action('open_selected_item_preselect'))
+--	self:add_key_binding('esc', 'menu-close', self:create_key_action('close'))
+--	self:add_key_binding('pgup', 'menu-page-up', self:create_key_action('on_pgup'), 'repeatable')
+--	self:add_key_binding('pgdwn', 'menu-page-down', self:create_key_action('on_pgdwn'), 'repeatable')
+--	self:add_key_binding('home', 'menu-home', self:create_key_action('on_home'))
+--	self:add_key_binding('end', 'menu-end', self:create_key_action('on_end'))
+
 function Menu:open(data, callback, opts)
 	local open_menu = self:is_open()
 	if open_menu then
@@ -1020,41 +1036,15 @@ function Menu:enable_key_bindings()
 	-- doesn't support 'repeatable' flag, so we are stuck with this monster.
 	self:add_key_binding('up', 'menu-prev1', self:create_key_action('prev'), 'repeatable')
 	self:add_key_binding('down', 'menu-next1', self:create_key_action('next'), 'repeatable')
-	self:add_key_binding('ctrl+up', 'menu-move-up', self:create_key_action('move_selected_item_up'), 'repeatable')
-	self:add_key_binding('ctrl+down', 'menu-move-down', self:create_key_action('move_selected_item_down'), 'repeatable')
 	self:add_key_binding('left', 'menu-back1', self:create_key_action('key_left'))
 	self:add_key_binding('right', 'menu-select1', self:create_key_action('key_right'))
-	self:add_key_binding('shift+right', 'menu-select-soft1',
-		self:create_key_action('open_selected_item_soft', {shift = true}))
-	self:add_key_binding('shift+mbtn_left', 'menu-select3', self:create_modified_mbtn_left_handler({shift = true}))
-	self:add_key_binding('ctrl+mbtn_left', 'menu-select4', self:create_modified_mbtn_left_handler({ctrl = true}))
-	self:add_key_binding('alt+mbtn_left', 'menu-select5', self:create_modified_mbtn_left_handler({alt = true}))
-	self:add_key_binding('mbtn_back', 'menu-back-alt3', self:create_key_action('back'))
-	self:add_key_binding('bs', 'menu-back-alt4', self:create_key_action('key_bs'), {repeatable = true, complex = true})
-	self:add_key_binding('shift+bs', 'menu-clear-query', self:create_key_action('key_bs', {shift = true}),
-		{repeatable = true, complex = true})
-	self:add_key_binding('ctrl+bs', 'menu-delete-word', self:create_key_action('key_bs', {ctrl = true}),
-		{repeatable = true, complex = true})
 	self:add_key_binding('enter', 'menu-select-alt3', self:create_key_action('open_selected_item_preselect'))
 	self:add_key_binding('kp_enter', 'menu-select-alt4', self:create_key_action('open_selected_item_preselect'))
-	self:add_key_binding('ctrl+enter', 'menu-select-ctrl1', self:create_key_action('key_ctrl_enter', {ctrl = true}))
-	self:add_key_binding('alt+enter', 'menu-select-alt1',
-		self:create_key_action('open_selected_item_preselect', {alt = true}))
-	self:add_key_binding('ctrl+kp_enter', 'menu-select-ctrl2',
-		self:create_key_action('open_selected_item_preselect', {ctrl = true}))
-	self:add_key_binding('alt+kp_enter', 'menu-select-alt2',
-		self:create_key_action('open_selected_item_preselect', {alt = true}))
-	self:add_key_binding('shift+enter', 'menu-select-alt5',
-		self:create_key_action('open_selected_item_soft', {shift = true}))
-	self:add_key_binding('shift+kp_enter', 'menu-select-alt6',
-		self:create_key_action('open_selected_item_soft', {shift = true}))
 	self:add_key_binding('esc', 'menu-close', self:create_key_action('close'))
 	self:add_key_binding('pgup', 'menu-page-up', self:create_key_action('on_pgup'), 'repeatable')
 	self:add_key_binding('pgdwn', 'menu-page-down', self:create_key_action('on_pgdwn'), 'repeatable')
 	self:add_key_binding('home', 'menu-home', self:create_key_action('on_home'))
 	self:add_key_binding('end', 'menu-end', self:create_key_action('on_end'))
-	self:add_key_binding('del', 'menu-delete-item', self:create_key_action('delete_selected_item'))
-	self:add_key_binding('ctrl+v', 'menu-paste', self:create_key_action('paste'))
 	if self.type_to_search then
 		self:search_enable_key_bindings()
 	else

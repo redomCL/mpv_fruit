@@ -1,5 +1,34 @@
 ---@param data MenuData
 ---@param opts? {submenu?: string; mouse_nav?: boolean; on_close?: string | string[]}
+
+
+--修改内容：->
+
+--1.不显示字幕在线搜索，所有类型轨道都添加禁用选项:
+--function create_select_tracklist_type_menu_opener(menu_title, track_type, track_prop, load_command)
+--	local function serialize_tracklist(tracklist)
+--		local items = {}
+--		if load_command then
+--			items[#items + 1] = {
+--				title = t('Load'), bold = true, italic = true, hint = t('open file'), value = '{load}',
+--			}
+--		end
+--		if #items > 0 then
+--			items[#items].separator = true
+--		end
+--
+--		local first_item_index = #items + 1
+--		local active_index = nil
+--		local disabled_item = nil
+--
+--		   Add option to disable a subtitle track. This works for all tracks,
+--		   but why would anyone want to disable audio or video? Better to not
+--		   let people mistakenly select what is unwanted 99.999% of the time.
+--		   If I'm mistaken and there is an active need for this, feel free to
+--		   open an issue.
+--			disabled_item = {title = t('Disabled'), italic = true, muted = true, hint = '—', value = nil, active = true}
+--			items[#items + 1] = disabled_item
+
 function open_command_menu(data, opts)
 	local function run_command(command)
 		if type(command) == 'string' then
@@ -91,15 +120,9 @@ function create_self_updating_menu_opener(opts)
 	end
 end
 
-function create_select_tracklist_type_menu_opener(menu_title, track_type, track_prop, load_command, download_command)
+function create_select_tracklist_type_menu_opener(menu_title, track_type, track_prop, load_command)
 	local function serialize_tracklist(tracklist)
 		local items = {}
-
-		if download_command then
-			items[#items + 1] = {
-				title = t('Download'), bold = true, italic = true, hint = t('search online'), value = '{download}',
-			}
-		end
 		if load_command then
 			items[#items + 1] = {
 				title = t('Load'), bold = true, italic = true, hint = t('open file'), value = '{load}',
@@ -118,10 +141,8 @@ function create_select_tracklist_type_menu_opener(menu_title, track_type, track_
 		-- let people mistakenly select what is unwanted 99.999% of the time.
 		-- If I'm mistaken and there is an active need for this, feel free to
 		-- open an issue.
-		if track_type == 'sub' then
 			disabled_item = {title = t('Disabled'), italic = true, muted = true, hint = '—', value = nil, active = true}
 			items[#items + 1] = disabled_item
-		end
 
 		for _, track in ipairs(tracklist) do
 			if track.type == track_type then
@@ -162,9 +183,7 @@ function create_select_tracklist_type_menu_opener(menu_title, track_type, track_
 	end
 
 	local function handle_select(value)
-		if value == '{download}' then
-			mp.command(download_command)
-		elseif value == '{load}' then
+		if value == '{load}' then
 			mp.command(load_command)
 		else
 			mp.commandv('set', track_prop, value and value or 'no')
