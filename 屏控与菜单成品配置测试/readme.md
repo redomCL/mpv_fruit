@@ -4,4 +4,4 @@
 * 屏控用uosc，菜单用dyn_menu，尽量依靠uosc，减少其他lua数量。
 
 ## uosc lualite：主要用于Linux平台上未来可能向uosc过渡的测试、Windows完全弃用dun_menu（菜单和文件浏览器）的测试
-* 屏控和菜单完全使用uosc，考虑尽量依靠uosc，减少其他lua数量。由于是测试性质，短期不打算正式使用，所以并未归纳到Linux的分支。
+* 屏控和菜单完全使用uosc，尽量只依靠uosc，减少其他lua数量。由于是测试性质，短期不打算正式使用，所以并未归纳到Linux的分支。
