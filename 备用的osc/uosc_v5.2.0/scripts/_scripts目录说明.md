@@ -1,4 +1,4 @@
-# file_browser(\modules\keybinds.lua,\modules\navigation\scanning.lua有自定义修改)
+# file_browser(\modules\keybinds.lua有自定义修改,\modules\navigation\scanning.lua有自定义修改)
 * 文件浏览脚本，来源：https://github.com/dyphire/mpv-config
 
 # uosc(\main.lua,\elements\Menus.lua,\lib\menus.lua有自定义修改)
