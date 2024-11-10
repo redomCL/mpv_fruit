@@ -90,12 +90,12 @@
 
 * tomasklaen/uosc: https://github.com/tomasklaen/uosc
 
-* KrigBilateral : https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
+* igv/KrigBilateral : https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
 
-* NNEDI3 : https://github.com/bjin/mpv-prescalers
+* bjin/NNEDI3 : https://github.com/bjin/mpv-prescalers
 
-* SSIM : https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
+* igv/SSIM : https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
 
-* Anime4K : https://github.com/bloc97/Anime4K
+* bloc97/Anime4K : https://github.com/bloc97/Anime4K
 
-* simple-mpv-webui : https://github.com/open-dynaMIX/simple-mpv-webui
+* open-dynaMIX/simple-mpv-webui : https://github.com/open-dynaMIX/simple-mpv-webui
