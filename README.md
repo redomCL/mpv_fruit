@@ -82,7 +82,7 @@
 
 * dyphire/mpv-config : https://github.com/dyphire/mpv-config
 
-* mpv_lazy : https://github.com/hooke007/MPV_lazy
+* hooke007/mpv_lazy : https://github.com/hooke007/MPV_lazy
 
 * tsl0922/mpv-menu-plugin : https://github.com/tsl0922/mpv-menu-plugin
 
