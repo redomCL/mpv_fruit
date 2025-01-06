@@ -1,5 +1,5 @@
-#### https://github.com/hooke007/MPV_lazy/wiki/3_K7sfunc
-#### rife倍帧
+#### https://github.com/hooke007/MPV_lazy/wiki/3_K7sfunc#rife_std
+#### RIFE倍帧
 
 import vapoursynth as vs
 from vapoursynth import core
@@ -20,7 +20,7 @@ Gpu_T = 2
 Lk_Fmt = False
 
 ## H_Pre	整数，预降低处理源高度（填你的显示器高度）
-## Model	<9> 当前使用的模型为rife-v4，编号为9
+## Model	当前使用的模型23，当前可用的模型<23|70|72|73> 
 ## <True|False> 是否使用ensemble版模型
 ## Fps_Num	整数，Fps_Num/Fps_Den 的值即帧率倍数
 ## Fps_Den	整数
