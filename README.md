@@ -34,7 +34,7 @@
 
 * 5.集成[KrigBilateral](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)、[NNEDI3](https://github.com/bjin/mpv-prescalers)、[SSIM](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)、[Anime4K](https://github.com/bloc97/Anime4K)。
 
-* 6.集成3款补帧方案（mpv_lazy的SVP PRO、RIFE STD）。
+* 6.集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载release，将其中补帧套件文件夹覆盖到mpv根目录。如果你希望下载项目文件进行配置，可以在[这里](https://github.com/redomCL/mpv_fruit/releases/download/mpv_v0.40.0-2025.05.04/RIFE_NV.7z)下载缺失部分覆盖到mpv根目录补全项目缺失的组件。
 
 * 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
@@ -60,7 +60,7 @@
 
 * /展示：播放器效果展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
-* /补帧套件：配置好的补帧套件和对应的快捷键配置，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，每次播放按相应快捷键启用（mpv_v0.40.0-2025.05.04开始添加RIFE_NV，但因上传容量受限，RIFE_NV全部组件无法上传到项目，只能打包发布release。如果需要该补帧，请下载release mpv_v0.40.0-2025.05.04，覆盖其中补帧套件文件夹。）。
+* /补帧套件：集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载release，将其中补帧套件文件夹覆盖到mpv根目录。如果你希望下载项目文件进行配置，可以在[这里](https://github.com/redomCL/mpv_fruit/releases/download/mpv_v0.40.0-2025.05.04/RIFE_NV.7z)下载缺失部分覆盖到mpv根目录补全项目缺失的组件。
 
 * /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解查看[wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
