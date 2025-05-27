@@ -50,7 +50,7 @@
 
 * 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询mpv官方最新说明书进行修正 [mpv manual master](https://mpv.io/manual/master/) ，或等待本项目更新。
 
-* /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。其中Anime4K为原作者的高预设，默认不启用，如果有需求，可在每次播放时按相应快捷键启用。
+* /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。注：该项目配置的mpv默认状态下专注于原生高质量观影，Anime4K、补帧等主观性喜好差异巨大，仅建议尝鲜。其中Anime4K默认已经内置但不开启，如果有需求可在每次播放时按相应快捷键启用；补帧属于尝鲜、实验性功能，默认不内置，如果有需求请按文件夹进行覆盖后，播放时按相应快捷键启用。
 
 * /svpflow：收集到的svp补帧引擎，已包含在补帧套件中用于补帧（SVP60、SVP142），来源：https://github.com/hooke007/MPV_lazy/discussions/114 ，此处单独留作备份。
 
