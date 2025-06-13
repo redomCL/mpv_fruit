@@ -1,6 +1,6 @@
 # 信息公告栏：
 
-#### 🔈mpv_v0.40.0-2025.05.04开始添加RIFE_NV，因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。如果你希望下载项目文件进行配置，可以在[这里](https://github.com/redomCL/mpv_fruit/releases/download/mpv_v0.40.0-2025.05.04/RIFE_NV.7z)下载缺失部分覆盖到mpv根目录补全项目缺失的组件。 ——2025.05.22
+#### 🔈mpv_v0.40.0-2025.05.04开始添加RIFE_NV，因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。 ——2025.05.22
 #### 🔈release现已包含配置好的基于uosc的播放器（mpvnext目录开箱即用），但osc_fruit依旧无限期作为主线（直到随着mpv版本更新出现问题，上游作者不再维护为止），因此如果使用uosc，补帧套件和多个预设内的按键配置不能直接覆盖使用，请对比后自行抄写修改。 ——2025.02.04
 #### 🔈考虑到未来第三方osc可能停止维护，我个人无能力接手，因此准备了几套备用osc，以及设置好的默认osc，以便不时之需（虽然没有技术，但还是要有危机意识的😀） ——2024.08.15
 #### 🔈代码排版以本地notepad++为准。mpv播放器讨论QQ群：611768740(对mpv零基础纯问问题的就不要进了，拒绝回复基础问题) ——1970.01.01
@@ -60,7 +60,7 @@
 
 * /展示：播放器效果展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
   
-* /补帧套件：集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载release，将其中补帧套件文件夹覆盖到mpv根目录。如果你希望下载项目文件进行配置，可以在[这里](https://github.com/redomCL/mpv_fruit/releases/download/mpv_v0.40.0-2025.05.04/RIFE_NV.7z)下载缺失部分覆盖到mpv根目录补全项目缺失的组件。
+* /补帧套件：集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。
 
 * /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解查看[wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
