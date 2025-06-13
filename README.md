@@ -34,7 +34,7 @@
 
 * 5.集成[KrigBilateral](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)、[NNEDI3](https://github.com/bjin/mpv-prescalers)、[SSIM](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)、[Anime4K](https://github.com/bloc97/Anime4K)。
 
-* 6.集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载release，将其中补帧套件文件夹覆盖到mpv根目录。如果你希望下载项目文件进行配置，可以在[这里](https://github.com/redomCL/mpv_fruit/releases/download/mpv_v0.40.0-2025.05.04/RIFE_NV.7z)下载缺失部分覆盖到mpv根目录补全项目缺失的组件。
+* 6.集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。
 
 * 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
