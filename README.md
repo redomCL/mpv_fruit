@@ -73,7 +73,7 @@
 |------------- |--------------|-----------------|------------------------|-------------------------|
 |1[低]|移动端：<br>适合低性能笔记本和台式，噪音很低|√视频：auto-safe<br>√音频：CPU|√新渲染器<br>√缩放算法：内置的profile＝fast|√默认(fruit)|
 |2[中]|平&emsp;衡：<br>适合普通笔记本和台式，硬件能耗比差可能有噪音，尤其是笔记本|√视频：d3d11va<br>√音频：CPU|√新渲染器<br>√缩放算法：内置的profile=gpu-hq|√默认(fruit)|
-|3[高]|高质量[默认预设]：<br>不考虑功耗的追求画质，仅适合性能好的台式，笔记本噪音可能很大。默认自适应原始的单声道 - 八声道，如果有预期外问题请在mpv.conf中设置"audio-channels=stereo"或其他目标声道数|√视频：CPU<br>√音频：CPU|√新渲染器<br>√缩放算法：<br>√deband=yes<br>√cscale=ewa_lanczos<br>√scale=ewa_lanczos<br>√linear-upscaling=no<br>√sigmoid-upscaling=yes<br>√dscale=lanczos<br>√correct-downscaling=yes<br>√linear-downscaling=no<br>√抗震铃(部分失效参数不删除，或许上游作者会重新设计)<br>√外置KrigBilateral+NNEDI3+SSIM着色器|√误差抖动(内核为floyd-steinberg)|
+|3[高]|高质量[默认预设]：<br>不考虑功耗的追求画质，仅适合性能好的台式，笔记本噪音可能很大。默认自适应原始的单声道 - 八声道，如果有预期外问题请在mpv.conf中设置"audio-channels=stereo"或其他目标声道数|√视频：CPU<br>√音频：CPU|√新渲染器<br>√缩放算法：<br>√deband=yes<br>√cscale=ewa_lanczos<br>√scale=ewa_lanczos<br>√linear-upscaling=no<br>√sigmoid-upscaling=yes<br>√dscale=lanczos<br>√correct-downscaling=yes<br>√linear-downscaling=no<br>√抗震铃(部分失效参数不删除，或许上游作者会重新设计)<br>√叠加外置KrigBilateral+NNEDI3+SSIM着色器|√误差抖动(内核为floyd-steinberg)|
 |4[HTPC]|用于HTPC[基于配置3增加一些HTPC强制的高级要求]：<br>√以全屏启动<br>√启用音频设备独占<br>√必须有独立硬件音频设备处理（回音壁/多声道AV功放）|√视频：CPU<br>√音频：杜比/DTS格式必须源码直通，非杜比/DTS依赖CPU|√播放器不再对音频进行任何干涉，杜比/DTS格式必须源码直通，非杜比/DTS的源码直通格式decode到PCM后，全部交给硬件音频设备处理（回音壁/多声道AV功放）<br>√其他配置同3|√配置同3|
 
 # 使用了以下项目🔍：
