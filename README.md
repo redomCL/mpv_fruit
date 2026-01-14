@@ -1,8 +1,7 @@
 # 信息公告栏：
 
-#### 🔈mpv_v0.40.0-2025.05.04开始添加RIFE_NV，因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。 ——2025.05.22
-#### 🔈release现已包含配置好的基于uosc的播放器（mpvnext目录开箱即用），但osc_fruit依旧无限期作为主线（直到随着mpv版本更新出现问题，上游作者不再维护为止），因此如果使用uosc，补帧套件和多个预设内的按键配置不能直接覆盖使用，请对比后自行抄写修改。 ——2025.02.04
-#### 🔈考虑到未来第三方osc可能停止维护，我个人无能力接手，因此准备了几套备用osc，以及设置好的默认osc，以便不时之需（虽然没有技术，但还是要有危机意识的😀） ——2024.08.15
+#### 🔈已完全删除补帧方面功能，原因一是显卡目前正在逐步完善补帧，二是[mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit)项目具备更完善的补帧已经其他各种组件。 ——2026.01.14
+#### 🔈release现已包含配置好的基于uosc的播放器（mpvnext目录开箱即用），但osc_fruit依旧无限期作为主线（本人没有能力维护osc脚本，直到随着mpv版本更新出现问题，上游作者不再维护为止正式更换osc），因此如果使用uosc，多个预设内的按键配置不能直接覆盖使用，请对比后自行抄写修改。 ——2025.02.04
 #### 🔈代码排版以本地notepad++为准。mpv播放器讨论QQ群：611768740(对mpv零基础纯问问题的就不要进了，拒绝回复基础问题) ——1970.01.01
 
 ---
@@ -34,13 +33,11 @@
 
 * 5.集成[KrigBilateral](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)、[NNEDI3](https://github.com/bjin/mpv-prescalers)、[SSIM](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)、[Anime4K](https://github.com/bloc97/Anime4K)。
 
-* 6.集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。
+* 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 7.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
+* 7.四种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
-* 8.四种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
-
-* 9.集成了simple-mpv-webui远程控制。
+* 8.集成了simple-mpv-webui远程控制。
 
 # 目录简介🥢（本项目不能覆盖更新）：
 
@@ -52,19 +49,15 @@
 
 * /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。注：该项目配置的mpv默认状态下专注于原生高质量观影，Anime4K、补帧等主观性喜好差异巨大，仅建议尝鲜。其中Anime4K默认已经内置但不开启，如果有需求可在每次播放时按相应快捷键启用；补帧属于尝鲜、实验性功能，默认不内置，如果有需求请按文件夹进行覆盖后，播放时按相应快捷键启用。
 
-* /svpflow：收集到的svp补帧引擎，已包含在补帧套件中用于补帧（SVP60、SVP142），来源：https://github.com/hooke007/MPV_lazy/discussions/114 ，此处单独留作备份。
-
 * /webui控制：[simple-mpv-webui远程控制](https://github.com/open-dynaMIX/simple-mpv-webui)，作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，默认访问地址为"你的设备IP:8086"。
 
 * /备用的osc：几款备用的osc，根据喜好选择切换。注意:"osc"和"thumbfastosc"与其他脚本的搭配组合无改动，因此不需要单独集成所需的其他脚本。而使用uosc意味着可以省略大多数uosc以外的脚本，这意味着使用uosc，要重新和其他额外脚本进行搭配，因此uosc配置的两个皮肤集成了所有需要的额外脚本。
 
 * /展示：播放器效果展示，随着更新，展示效果可能是过时的，请以实际使用效果为准。
-  
-* /补帧套件：集成4款补帧方案（mpv_lazy的SVP PRO、RIFE STD、RIFE NV），因上传容量受限，无法将RIFE_NV全部组件上传到项目，如果需要该补帧，请下载[release](https://github.com/redomCL/mpv_fruit/releases)，将其中补帧套件文件夹覆盖到mpv根目录。
 
 * /解码预设：四种预设，需要时将该目录下的文件覆盖到mpv播放器根目录，详解查看[wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
-* ⚠注意：本项目的补帧、webui以体验形式存在，即存在随时不再支持、随时出现错误、随时删除的可能，因此在备用预设中，播放器的配置以及按键配置默认是屏蔽注释掉这些“体验版”功能的，如有需要，可自行删除注释符。
+* ⚠注意：本项目的webui以体验形式存在，即存在随时不再支持、随时出现错误、随时删除的可能，因此在备用预设中，播放器的配置以及按键配置默认是屏蔽注释掉这些“体验版”功能的，如有需要，可自行删除注释符。
 
 # 预设对比🆚:
 
@@ -85,7 +78,7 @@
 
 * dyphire/mpv-config : https://github.com/dyphire/mpv-config
 
-* hooke007/mpv_lazy : https://github.com/hooke007/MPV_lazy
+* hooke007/mpv_PlayKit : https://github.com/hooke007/mpv_PlayKit
 
 * tsl0922/mpv-menu-plugin : https://github.com/tsl0922/mpv-menu-plugin
 
