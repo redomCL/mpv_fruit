@@ -21,7 +21,7 @@
 
 # 配置特性🍺：
 
-* 0.基于[mpv player](https://mpv.io/)、[dyphire/mpv-config](https://github.com/dyphire/mpv-config)、[mpv_lazy](https://github.com/hooke007/MPV_lazy)重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
+* 0.基于[mpv player](https://mpv.io/)、[dyphire/mpv-config](https://github.com/dyphire/mpv-config)、[mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit)重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
 
 * 1.使用mpv_lazy作者的[osc_plus](https://github.com/hooke007/MPV_lazy/blob/2027fb8b2ec766896773c6803c9b7a33a4fc6f12/portable_config/scripts/osc_plus.lua)（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
 
@@ -47,7 +47,7 @@
 
 * 官方mpv更新非常频繁，所以本项目有滞后性，出现异常请自行查询mpv官方最新说明书进行修正 [mpv manual master](https://mpv.io/manual/master/) ，或等待本项目更新。
 
-* /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。注：该项目配置的mpv默认状态下专注于原生高质量观影，Anime4K、补帧等主观性喜好差异巨大，仅建议尝鲜。其中Anime4K默认已经内置但不开启，如果有需求可在每次播放时按相应快捷键启用；补帧属于尝鲜、实验性功能，默认不内置，如果有需求请按文件夹进行覆盖后，播放时按相应快捷键启用。
+* /mpv：mpv播放器的配置文件，将该目录下的文件覆盖到mpv播放器根目录即可正常使用。内容为：A.定制好的说明书，B.解码配置，C.快捷键配置，D.脚本，E.着色器（KrigBilateral、NNEDI3、SSIM、Anime4K）。注：该项目配置的mpv默认状态下专注于原生高质量观影，其中Anime4K主观性喜好差异巨大，仅建议尝鲜。所以Anime4K已经内置好，但默认不开启，如果有需求可在每次播放时按相应快捷键启用。
 
 * /webui控制：[simple-mpv-webui远程控制](https://github.com/open-dynaMIX/simple-mpv-webui)，作为HTPC情境下除使用无线控制器（键鼠、手柄、遥控器等）外的另一个选择，删除了快捷键，并将文字全部替换为中文，能力有限，无法大幅度增强功能，不算完美，仅满足基本，所以默认没有集成到mpv内，如需要该功能，将该目录下的文件覆盖到mpv播放器根目录，默认访问地址为"你的设备IP:8086"。
 
