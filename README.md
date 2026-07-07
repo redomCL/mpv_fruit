@@ -3,3 +3,8 @@
 * apt默认配置路径：~/.config/mpv
 
 * flatpak的默认配置路径：~/.var/app/io.mpv.Mpv/config/mpv
+
+* 命令行下使用mpv --player-operation-mode=pseudo-gui -v可以打开mpv空窗口，后面添加的-v参数则可以在中端持续输出工作日志，这在调试时可能更有一些用处。
+
+* 在flatpak版本中，则使用flatpak run io.mpv.Mpv --player-operation-mode=pseudo-gui -v
+
