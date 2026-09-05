@@ -14,7 +14,7 @@
 * PC上的默认配置
 
 ## 4.mpvnext[uosc dyn_menu lualite]
-* 屏控用uosc，菜单用dyn_menu，减少其他lua数量。
+* 屏控用uosc，菜单用dyn_menu，减少其他lua数量。解码同3
 
 ## 5.mpvhtpc[uosc lualite]
-* 屏控用uosc，保留dyn_menu的Windows文件浏览，减少其他lua数量。
+* 屏控用uosc，菜单用uosc，减少其他lua数量。解码同3
