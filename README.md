@@ -35,7 +35,7 @@
 
 * 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 7.四种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
+* 7.多种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
 * 8.集成了simple-mpv-webui远程控制。
 
