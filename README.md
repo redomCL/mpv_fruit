@@ -14,21 +14,17 @@
 
 * 0.基于[mpv player](https://mpv.io/)、[dyphire/mpv-config](https://github.com/dyphire/mpv-config)、[mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit)重新组装，仅专注本地PC/HTPC高质量播放（PC/HTPC是不同的高质量情景）。
 
-* 1.使用mpv_lazy作者的[osc_plus](https://github.com/hooke007/MPV_lazy/blob/2027fb8b2ec766896773c6803c9b7a33a4fc6f12/portable_config/scripts/osc_plus.lua)（本项目改为osc_fruit），osc实现的控制功能：暂停，文件和章节跳转，音频和字幕轨道切换，预览图；osc实现的显示功能：当前播放的文件名，章节，列表，窗口缩放，解码类型，音量，字幕延迟。
+* 1.使用[uosc](https://github.com/tomasklaen/uosc)。
 
-* 2.播放器实现的功能：章节列表、播放列表、音频设备列表、轨道列表。通过数字小键盘调节字幕的尺寸、位置。脚本尽可能显示简体中文，并统一了样式，字幕轨道默认选择简体中文。
+* 2.播放器主要功能：章节列表、播放列表、音频设备列表、轨道列表。通过数字小键盘调节字幕的尺寸、位置。脚本尽可能显示简体中文，并统一了样式，字幕轨道默认选择简体中文。
 
-* 3.备选了几款常见的osc并按照个人习惯进行了调整。
+* 3.通过tsl0922的菜单脚本实现mpv的菜单，并根据个人使用习惯做了简化，该脚本实现的菜单响应速度很快。 
 
-* 4.通过tsl0922的菜单脚本实现mpv的菜单，并根据个人使用习惯做了简化，该脚本实现的菜单响应速度很快。 
+* 4.集成[KrigBilateral](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)、[NNEDI3](https://github.com/bjin/mpv-prescalers)、[SSIM](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)、[Anime4K](https://github.com/bloc97/Anime4K)。
 
-* 5.集成[KrigBilateral](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)、[NNEDI3](https://github.com/bjin/mpv-prescalers)、[SSIM](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)、[Anime4K](https://github.com/bloc97/Anime4K)。
+* 5.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
 
-* 6.关闭所有默认快捷键，重新定义常用快捷键，并绘制快捷键说明书。
-
-* 7.多种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
-
-* 8.集成了simple-mpv-webui远程控制。
+* 6.多种预设，适配不同性能的硬件和情境。详解查看 [wiki](https://github.com/redomCL/mpv_fruit/wiki/%E5%85%B3%E4%BA%8E%E9%A2%84%E8%AE%BE) 。
 
 # 目录简介🥢（本项目不能覆盖更新）：
 
