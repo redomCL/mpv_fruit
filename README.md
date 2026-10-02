@@ -1,21 +1,12 @@
 # 信息公告栏：
 
-#### 🔈已完全删除补帧方面功能，原因一是显卡目前正在逐步完善补帧，二是[mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit)项目具备更完善的补帧以及其他各种组件。 ——2026.01.14
-#### 🔈release现已包含配置好的基于uosc的播放器（mpvnext目录开箱即用），但osc_fruit依旧无限期作为主线（本人没有能力维护osc脚本，直到随着mpv版本更新出现问题，上游作者不再维护为止正式更换osc），因此如果使用uosc，多个预设内的按键配置不能直接覆盖使用，请对比后自行抄写修改。 ——2025.02.04
+#### 🔈完全转用uosc。 ——2026.10.02
 #### 🔈代码排版以本地notepad++为准。mpv播放器讨论QQ群：611768740(只是用于日常使用mpv的讨论，没有高阶大神，对mpv零基础纯问问题的就不要进了，进来也是后悔，也不会帮忙回复基础问题，重在自学) ——1970.01.01
 
 ---
 
 # mpv_fruit🍉🍌🍓🍎
 
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA1.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA2.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA3.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA4.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA5.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA6.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA7.png)
-![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/%E5%B1%95%E7%A4%BA8.png)
 ![](https://github.com/redomCL/mpv_fruit/blob/main/%E5%B1%95%E7%A4%BA/UOSC.png)
 
 
